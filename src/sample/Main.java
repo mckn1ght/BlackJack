@@ -7,13 +7,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
     @Override
     public void start(Stage primaryStage) throws Exception{
+
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("Black Jack");
+        primaryStage.setScene(new Scene(root, 1280, 720));
+        root.setId("mainMenu");
+        String css = this.getClass().getResource("styles.css").toExternalForm();
+        root.getStylesheets().add(css);
+        primaryStage.setResizable(false);
         primaryStage.show();
+
+
     }
 
 
