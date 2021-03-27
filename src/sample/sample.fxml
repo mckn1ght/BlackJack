@@ -3,11 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="borderMainMenu"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller" stylesheets="@styles.css" >
+<BorderPane fx:id="borderMainMenu" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMain" stylesheets="@styles.css" >
     <center>
            <VBox fx:id="vb" alignment="CENTER" spacing="50"  >
                <Button prefWidth="360" prefHeight="50"  text="JOC NOU" onMouseClicked="#jocNou" />
-               <Button prefWidth="360" prefHeight="50"  text="SCORURI" onMouseClicked="#scoruri" />
+               <Button prefWidth="360" prefHeight="50"  text="SCORURI" onMouseClicked="#handleButtonAction" />
                <Button prefWidth="360" prefHeight="50"  text="IESIRE"  onMouseClicked="#exit" />
            </VBox>
        </center>

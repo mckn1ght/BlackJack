@@ -3,18 +3,18 @@
    -fx-background-image: url('file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/Resurse/BackgroundMeniu.jpg');
    -fx-background-repeat: stretch;
    -fx-background-position: center center;
-       -fx-border-color: #2e8b57;
-       -fx-padding: 10;
-       -fx-spacing: 8;
+   -fx-border-color: #2e8b57;
+   -fx-padding: 10;
+   -fx-spacing: 8;
 }
 
 #scoruri{
 -fx-background-image: url('file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/Resurse/highscores.gif');
    -fx-background-repeat: stretch;
    -fx-background-position: center center;
-       -fx-border-color: #2e8b57;
-       -fx-padding: 10;
-       -fx-spacing: 8;
+   -fx-border-color: #2e8b57;
+   -fx-padding: 10;
+   -fx-spacing: 8;
 }
 .button{
   -fx-background-color:#fed;

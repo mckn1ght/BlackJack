@@ -1,43 +1,32 @@
 package sample;
 
-import javafx.application.Platform;
-import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import java.awt.*;
+public class Scoruri {
 
 
-public class Controller {
+    public void start(Stage primaryStage) throws Exception {
 
-    public void exit(){
-        Platform.exit();
-    }
-
-    public void jocNou(){
-
-    }
-    public void scoruri(){
-
+        Parent root = FXMLLoader.load(getClass().getResource("scoruri.fxml"));
         BorderPane layoutScoruri = new BorderPane();
         Scene scenaScoruri = new Scene(layoutScoruri, 500, 480);
         Stage scoruri = new Stage();
 
-        scoruri.setTitle("HIGHSCORES");
+        scoruri.setTitle("SCORURI");
         scoruri.setScene(scenaScoruri);
         scoruri.setResizable(false);
 
         layoutScoruri.setId("scoruri");
         String css = this.getClass().getResource("styles.css").toExternalForm();
         layoutScoruri.getStylesheets().add(css);
-        
 
+        scoruri.setScene(root.getScene());
         scoruri.show();
+
     }
-
-
-
 
 }
