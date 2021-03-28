@@ -9,18 +9,44 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
+import javafx.scene.control.Button;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
 
 public class ControllerMain {
+    static Stage stageMeniuPrincipal;
+    @FXML
+    Button butonJocNou;
+
 
     public void exit() {
         Platform.exit();
     }
 
-    public void jocNou() {
+    public void jocNou(MouseEvent mouseEvent) {
+       stageMeniuPrincipal = (Stage) butonJocNou.getScene().getWindow();
+        stageMeniuPrincipal.hide();
+            try {
+
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("jocNou.fxml"));
+                Parent root2 = (Parent) fxmlLoader.load();
+                Scene scenaScoruri = new Scene(root2, 1280, 720);
+                Stage jocNou = new Stage();
+
+                jocNou.setTitle("Blackjack");
+                jocNou.setScene(scenaScoruri);
+                jocNou.setResizable(false);
+
+                root2.setId("jocNou");
+                String css = this.getClass().getResource("styles.css").toExternalForm();
+                root2.getStylesheets().add(css);
+                jocNou.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
 
     }
 

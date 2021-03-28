@@ -1,15 +1,27 @@
+* {
+    -fx-font-family: "Courier New";
+    -fx-font-size: 30;
+    -fx-font-weight: 800;
+}
 
 #mainMenu{
-   -fx-background-image: url('file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/Resurse/BackgroundMeniu.jpg');
+   -fx-background-image: url('file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/Resurse/BackgroundMeniu.gif');
    -fx-background-repeat: stretch;
    -fx-background-position: center center;
    -fx-border-color: #2e8b57;
    -fx-padding: 10;
    -fx-spacing: 8;
 }
-
+#jocNou{
+   -fx-background-image: url('file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/Resurse/masa.jpg');
+   -fx-background-repeat: stretch;
+   -fx-background-position: center center;
+   -fx-border-color: #2e8b57;
+   -fx-padding: 10;
+   -fx-spacing: 8;
+}
 #scoruri{
--fx-background-image: url('file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/Resurse/highscores.gif');
+   -fx-background-image: url('file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/Resurse/highscores.gif');
    -fx-background-repeat: stretch;
    -fx-background-position: center center;
    -fx-border-color: #2e8b57;
@@ -18,6 +30,10 @@
 }
 .button{
   -fx-background-color:#fed;
-   -fx-font-size: 25;
 }
+
+#pariazaJocNou, #inapoiJocNou{
+    -fx-font-size: 5;
+}
+
 

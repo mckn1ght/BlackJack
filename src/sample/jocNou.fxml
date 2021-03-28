@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.image.ImageView?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerJocNou">
+   <right>
+      <VBox prefHeight="202.0" prefWidth="165.0" spacing="50" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="pariaza" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Call" />
+            <Button fx:id="pass" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Pass" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></VBox>
+   </right>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" spacing="850" >
+         <children>
+            <TextArea fx:id="Log" prefHeight="100.0" prefWidth="264.0"  disable="true"/>
+            <Button fx:id="inapoi" mnemonicParsing="false" onMouseClicked="#inapoi" prefHeight="50.0" prefWidth="150" text="Inapoi" />
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Scor:" textFill="#ee0000" underline="true">
+               <font>
+                  <Font name="Courier New Bold" size="36.0" />
+               </font>
+            </Label>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>

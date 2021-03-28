@@ -51,7 +51,7 @@
       </GridPane>
    </center>
    <bottom>
-      <Button fx:id="inapoiScor" onMouseClicked="#inapoi" prefHeight="50" prefWidth="120" text="INAPOI" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+      <Button fx:id="inapoiScor" onMouseClicked="#inapoi" prefHeight="50" prefWidth="150" text="INAPOI" textAlignment="CENTER" BorderPane.alignment="CENTER" />
    </bottom>
     
 </BorderPane>
