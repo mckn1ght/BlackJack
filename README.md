@@ -24,8 +24,19 @@ In this version:
 
 RO Versiunea 0.5  
 
-In versiunea 0.5 toate functionalitatile meniului principal functioneaza corect  
+   - In versiunea 0.5 toate functionalitatile meniului principal functioneaza corect  
 
 EN Version 0.5
 
-All main menu items are working as intended  
+   - All main menu items are working as intended  
+
+-------------------------------------------------------------------------------------------------------  
+RO Versiunea 0.6
+
+-   Generarea pachetului de carti la lansarea aplicatiei  
+
+EN Version 0.6  
+
+   - The deck of cards is generated at launch  
+
+-------------------------------------------------------------------------------------------------------  
