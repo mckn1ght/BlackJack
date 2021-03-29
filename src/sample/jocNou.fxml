@@ -10,7 +10,7 @@
    <right>
       <VBox prefHeight="202.0" prefWidth="165.0" spacing="50" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="pariaza" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Call" />
+            <Button fx:id="pariaza" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Call" onMouseClicked="#pariaza" />
             <Button fx:id="pass" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Pass" />
          </children>
          <opaqueInsets>
@@ -21,6 +21,7 @@
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" spacing="850" >
          <children>
             <TextArea fx:id="Log" prefHeight="100.0" prefWidth="264.0"  disable="true"/>
+            <ImageView fx:id="hand"></ImageView>
             <Button fx:id="inapoi" mnemonicParsing="false" onMouseClicked="#inapoi" prefHeight="50.0" prefWidth="150" text="Inapoi" />
          </children>
       </HBox>
