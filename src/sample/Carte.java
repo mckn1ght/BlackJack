@@ -7,15 +7,15 @@ public class Carte
     public static final int numarCarti = 52;
     String[] simbolInitializare = new String[4];
     private Carte[] pachetDeCarti;
-    int id = 1;
-    String simbol;
-    int valoare;
+    int id = 1, valoare;
+    String simbol, fata, spate;// de implementat CARD BACKS AND FRONTS
+
 
     public Carte( ) {
         simbolInitializare[0] = "Trefla";
-        simbolInitializare[1] = "Inima Neagra";
+        simbolInitializare[1] = "Caro";
         simbolInitializare[2] = "Inima Rosie";
-        simbolInitializare[3] = "Caro";
+        simbolInitializare[3] = "Inima Neagra   ";
 
         pachetDeCarti = new Carte[numarCarti];
         int i = 0;
