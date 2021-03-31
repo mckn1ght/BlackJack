@@ -34,9 +34,14 @@ EN Version 0.5
 RO Versiunea 0.6
 
 -   Generarea pachetului de carti la lansarea aplicatiei  
+-   Implementarea ferestrei principale a jocului  
+-   Imaginile cartilor de joc din mana jucatorului sunt afisate in partea de jos a ecranului  
+
 
 EN Version 0.6  
 
    - The deck of cards is generated at launch  
+   - Multiple main game window implementations 
+   - Player's hand displays the card image  
 
 -------------------------------------------------------------------------------------------------------  
