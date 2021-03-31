@@ -1,13 +1,17 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+import java.awt.*;
 
+public class Main extends Application {
+    public PachetDeCarti pachetDeCarti = new PachetDeCarti();
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -19,9 +23,10 @@ public class Main extends Application {
         root.getStylesheets().add(css);
         primaryStage.setResizable(false);
         primaryStage.show();
-        Carte carte = new Carte();
-        carte.show();
-        }
+
+        pachetDeCarti.show();
+
+    }
 
 
 
