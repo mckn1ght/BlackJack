@@ -9,9 +9,11 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.util.Collections;
 
 public class Main extends Application {
     public PachetDeCarti pachetDeCarti = new PachetDeCarti();
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -27,8 +29,6 @@ public class Main extends Application {
         pachetDeCarti.show();
 
     }
-
-
 
     public static void main(String[] args) {
         launch(args);

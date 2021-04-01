@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import java.awt.*;
@@ -69,5 +71,9 @@ public class ControllerMain {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void reguli(){
+
     }
 }
