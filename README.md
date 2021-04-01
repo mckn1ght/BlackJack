@@ -54,7 +54,7 @@ RO Versiunea 0.7
 
 EN Version 0.7  
 
-   - Card images are not displaying correcly  
+   - Card images are now displaying correcly  
    - Added computer player that mimics the moves of the player  
    - Player's hand displays the card image  
 
