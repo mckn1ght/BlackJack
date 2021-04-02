@@ -44,4 +44,18 @@ EN Version 0.6
    - Multiple main game window implementations 
    - Player's hand displays the card image  
 
+------------------------------------------------------------------------------------------------------- 
+RO Versiunea 0.7
+
+-   Imaginea cartilor de joc acum se afiseaza corect  
+-   Am adaugat jucatorul-calculator care momentan doar mimeaza miscarile jucatorului  
+-   Imaginile cartilor de joc din mana jucatorului sunt afisate in partea de jos a ecranului  
+
+
+EN Version 0.7  
+
+   - Card images are now displaying correcly  
+   - Added computer player that mimics the moves of the player  
+   - Player's hand displays the card image  
+
 -------------------------------------------------------------------------------------------------------  
