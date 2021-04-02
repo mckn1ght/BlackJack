@@ -31,6 +31,7 @@ EN Version 0.5
    - All main menu items are working as intended  
 
 -------------------------------------------------------------------------------------------------------  
+
 RO Versiunea 0.6
 
 -   Generarea pachetului de carti la lansarea aplicatiei  
@@ -45,6 +46,7 @@ EN Version 0.6
    - Player's hand displays the card image  
 
 ------------------------------------------------------------------------------------------------------- 
+
 RO Versiunea 0.7
 
 -   Imaginea cartilor de joc acum se afiseaza corect  
@@ -57,5 +59,18 @@ EN Version 0.7
    - Card images are now displaying correcly  
    - Added computer player that mimics the moves of the player  
    - Player's hand displays the card image  
+
+-------------------------------------------------------------------------------------------------------  
+
+RO Versiunea 0.75  
+
+-   Am refacut mai multe metode   
+-   Acum calculatorul face alegeri de joc in functie de numarul de puncte detinute           
+
+
+EN Version 0.75    
+
+   - Reworked multiple methods  
+   - Computer player now chooses if he pays or not based on the number of points he has     
 
 -------------------------------------------------------------------------------------------------------  
