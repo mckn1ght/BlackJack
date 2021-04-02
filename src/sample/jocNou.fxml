@@ -9,16 +9,16 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css"  xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerJocNou">
    <right>
       <VBox prefHeight="202.0" prefWidth="165.0" spacing="50" BorderPane.alignment="CENTER">
-            <Button fx:id="pariaza" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Call" onMouseClicked="#pariaza" />
-            <Button fx:id="pass" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Pass" onMouseClicked="#pass" />
+            <Button fx:id="pariaza" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Call" onMouseClicked="#rundaNoua" />
+            <Button fx:id="pass" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Pass" onMouseClicked="#pass" disable="true" />
             <Button fx:id="inapoi" mnemonicParsing="false" onMouseClicked="#inapoi" prefHeight="50.0" prefWidth="150" text="Inapoi" />
          <opaqueInsets>
             <Insets />
          </opaqueInsets></VBox>
    </right>
    <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" spacing="20" >
-            <TextArea fx:id="Log" prefHeight="100.0" prefWidth="400"   editable="false" />
+      <HBox prefHeight="300.0" prefWidth="200.0" BorderPane.alignment="CENTER" spacing="20" >
+            <TextArea fx:id="Log" prefHeight="300.0" prefWidth="600"   editable="false" />
             <ImageView fx:id="cartea1"></ImageView>
             <ImageView fx:id="cartea2"></ImageView>
             <ImageView fx:id="cartea3"></ImageView>
