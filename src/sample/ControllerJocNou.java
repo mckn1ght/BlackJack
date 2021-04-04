@@ -25,8 +25,9 @@ public class ControllerJocNou {
     @FXML
     TextArea Log;
 
-    static int numarCartiManaJucator = 1, numarCartiManaDealer = 1, suma = 0, sumaDealer = 0;
+    static int numarCartiManaJucator = 0, numarCartiManaDealer = 0, suma = 0, sumaDealer = 0;
     static boolean passCalculator = false, passJucator = false;
+
     int c1, c2, c3, c4, c5, c6, cd1, cd2, cd3, cd4, cd5, cd6, alegere;
 
     public void inapoi() {
@@ -37,109 +38,103 @@ public class ControllerJocNou {
     }
 
     public void rundaNoua(){
-
-        if(!passJucator) {
-            randulJucatorului();
-        }
-
-        if(!passCalculator) {
-            randulCalculatorului();
-        }
+        randulJucatorului();
+        randulCalculatorului();
         conditieCastig();
     }
 
     public void randulJucatorului() {
-        switch (numarCartiManaJucator) {
-            case 1:
-                try {
-                    for (int i = 0; i < 53; i++) {
-                        c1 = (int) (52 * Math.random());
-                        c2 = (int) (52 * Math.random());
+        if (!passJucator) {
+            switch (numarCartiManaJucator) {
+                case 0:
+                    try {
+                        for (int i = 0; i < 53; i++) {
+                            c1 = (int) (52 * Math.random());
+                            c2 = (int) (52 * Math.random());
+                        }
+                        InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[c1].fata);
+                        Image image = new Image(stream);
+                        cartea1.setImage(image);
+                        suma = suma + PachetDeCarti.pachetDeCarti[c1].nrPuncte;
+                        numarCartiManaJucator++;
+                        InputStream stream2 = new FileInputStream(PachetDeCarti.pachetDeCarti[c2].fata);
+                        Image image2 = new Image(stream2);
+                        cartea2.setImage(image2);
+                        numarCartiManaJucator++;
+                        suma = suma + PachetDeCarti.pachetDeCarti[c2].nrPuncte;
+                        pass.setDisable(false);
+                        break;
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[c1].fata);
-                    Image image = new Image(stream);
-                    cartea1.setImage(image);
-                    numarCartiManaJucator++;
-                    suma = suma + PachetDeCarti.pachetDeCarti[c1].nrPuncte;
-                    InputStream stream2 = new FileInputStream(PachetDeCarti.pachetDeCarti[c2].fata);
-                    Image image2 = new Image(stream2);
-                    cartea2.setImage(image2);
-                    numarCartiManaJucator++;
-                    suma = suma + PachetDeCarti.pachetDeCarti[c2].nrPuncte;
-                    pass.setDisable(false);
-                    break;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
 
-            case 3:
-                try {
-                    for (int i = 0; i < 53; i++) {
-                        c3 = (int) (52 * Math.random());
+                case 2:
+                    try {
+                        for (int i = 0; i < 53; i++) {
+                            c3 = (int) (52 * Math.random());
+                        }
+                        InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[c3].fata);
+                        Image image = new Image(stream);
+                        cartea3.setImage(image);
+                        numarCartiManaJucator++;
+                        suma = suma + PachetDeCarti.pachetDeCarti[c3].nrPuncte;
+                        break;
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[c3].fata);
-                    Image image = new Image(stream);
-                    cartea3.setImage(image);
-                    numarCartiManaJucator++;
-                    suma = suma + PachetDeCarti.pachetDeCarti[c3].nrPuncte;
-                    break;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
 
-            case 4:
-                try {
-                    for (int i = 0; i < 53; i++) {
-                        c4 = (int) (52 * Math.random());
+                case 3:
+                    try {
+                        for (int i = 0; i < 53; i++) {
+                            c4 = (int) (52 * Math.random());
+                        }
+                        InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[c4].fata);
+                        Image image = new Image(stream);
+                        cartea4.setImage(image);
+                        numarCartiManaJucator++;
+                        suma = suma + PachetDeCarti.pachetDeCarti[c4].nrPuncte;
+                        break;
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[c4].fata);
-                    Image image = new Image(stream);
-                    cartea4.setImage(image);
-                    numarCartiManaJucator++;
-                    suma = suma + PachetDeCarti.pachetDeCarti[c4].nrPuncte;
-                    break;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
 
-            case 5:
-                try {
-                    for (int i = 0; i < 53; i++) {
-                        c5 = (int) (52 * Math.random());
+                case 4:
+                    try {
+                        for (int i = 0; i < 53; i++) {
+                            c5 = (int) (52 * Math.random());
+                        }
+                        InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[c5].fata);
+                        Image image = new Image(stream);
+                        cartea5.setImage(image);
+                        numarCartiManaJucator++;
+                        suma = suma + PachetDeCarti.pachetDeCarti[c5].nrPuncte;
+                        break;
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[c5].fata);
-                    Image image = new Image(stream);
-                    cartea5.setImage(image);
-                    numarCartiManaJucator++;
-                    suma = suma + PachetDeCarti.pachetDeCarti[c5].nrPuncte;
-                    break;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
 
-            case 6:
-                try {
-                    for (int i = 0; i < 53; i++) {
-                        c6 = (int) (52 * Math.random());
+                case 5:
+                    try {
+                        for (int i = 0; i < 53; i++) {
+                            c6 = (int) (52 * Math.random());
+                        }
+                        InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[c6].fata);
+                        Image image = new Image(stream);
+                        cartea6.setImage(image);
+                        numarCartiManaJucator++;
+                        suma = suma + PachetDeCarti.pachetDeCarti[c6].nrPuncte;
+                        break;
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[c6].fata);
-                    Image image = new Image(stream);
-                    cartea6.setImage(image);
-                    numarCartiManaJucator++;
-                    suma = suma + PachetDeCarti.pachetDeCarti[c6].nrPuncte;
-                    break;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            }
         }
     }
 
     public void randulCalculatorului() {
-
-        Log.setText(Log.getText() + "\nOponentul se gandeste.....");
         if (!passCalculator) {
             switch (numarCartiManaDealer) {
-                case 1:
+                case 0:
                     try {
                         for (int i = 0; i < 53; i++) {
                             cd1 = (int) (52 * Math.random());
@@ -172,14 +167,13 @@ public class ControllerJocNou {
                         e.printStackTrace();
                     }
 
-                case 3:
-                    pass.setDisable(true);
-                    pariaza.setDisable(true);
-                    try {
-                        Thread.sleep((int)(5 * Math.random()) * 1000);
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                    }
+                case 2:
+                    Log.setText(Log.getText() + "\nOponentul se gandeste.....");
+//                    try {
+//                        Thread.sleep((int)(5 * Math.random()) * 1000);
+//                    } catch (InterruptedException ex) {
+//                        ex.printStackTrace();
+//                    }
                     try {
                         for (int i = 0; i < 53; i++) {
                             cd3 = (int) (52 * Math.random());
@@ -189,7 +183,7 @@ public class ControllerJocNou {
                         carteDealer3.setImage(image);
                         numarCartiManaDealer++;
                         sumaDealer = sumaDealer + PachetDeCarti.pachetDeCarti[cd3].nrPuncte;
-                        if (sumaDealer == 16) {
+                        if (sumaDealer <= 16) {
                             alegere = (int) (10 * Math.random());
                             Log.setText(Log.getText() + "\nCase 3 - Alegere= " + alegere);
                             if (alegere < 5) {
@@ -197,24 +191,20 @@ public class ControllerJocNou {
                                 Log.setText(Log.getText() + "\nOponentul sta.");
                             }else{
                                 Log.setText(Log.getText() + "\nOponentul pariaza.");
-                                rundaNoua();
                             }
                         }
-                        pass.setDisable(false);
-                        pariaza.setDisable(false);
                         break;
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
 
-                case 4:
-                    pass.setDisable(true);
-                    pariaza.setDisable(true);
-                    try {
-                        Thread.sleep((int)(5 * Math.random()) * 1000);
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                    }
+                case 3:
+                    Log.setText(Log.getText() + "\nOponentul se gandeste.....");
+//                    try {
+//                        Thread.sleep((int)(5 * Math.random()) * 1000);
+//                    } catch (InterruptedException ex) {
+//                        ex.printStackTrace();
+//                    }
                     try {
                         for (int i = 0; i < 53; i++) {
                             cd4 = (int) (52 * Math.random());
@@ -232,24 +222,20 @@ public class ControllerJocNou {
                                 Log.setText(Log.getText() + "\nOponentul sta.");
                             }else{
                                 Log.setText(Log.getText() + "\nOponentul pariaza.");
-                                rundaNoua();
                             }
                         }
-                        pass.setDisable(false);
-                        pariaza.setDisable(false);
                         break;
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
 
-                case 5:
-                    pass.setDisable(true);
-                    pariaza.setDisable(true);
-                    try {
-                        Thread.sleep((int)(5 * Math.random()) * 1000);
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                    }
+                case 4:
+                    Log.setText(Log.getText() + "\nOponentul se gandeste.....");
+//                    try {
+//                        Thread.sleep((int)(5 * Math.random()) * 1000);
+//                    } catch (InterruptedException ex) {
+//                        ex.printStackTrace();
+//                    }
                     try {
                         for (int i = 0; i < 53; i++) {
                             cd5 = (int) (52 * Math.random());
@@ -265,26 +251,23 @@ public class ControllerJocNou {
                             if (alegere < 3) {
                                 passCalculator = true;
                                 Log.setText(Log.getText() + "\nOponentul sta.");
+//                                rundaNoua();
                             }else{
                                 Log.setText(Log.getText() + "\nOponentul pariaza.");
-                                rundaNoua();
                             }
                         }
-                        pass.setDisable(false);
-                        pariaza.setDisable(false);
                         break;
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
 
-                case 6:
-                    pass.setDisable(true);
-                    pariaza.setDisable(true);
-                    try {
-                        Thread.sleep((int)(5 * Math.random()) * 1000);
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                    }
+                case 5:
+                    Log.setText(Log.getText() + "\nOponentul se gandeste.....");
+//                    try {
+//                        Thread.sleep((int)(5 * Math.random()) * 1000);
+//                    } catch (InterruptedException ex) {
+//                        ex.printStackTrace();
+//                    }
                     try {
                         for (int i = 0; i < 53; i++) {
                             cd6 = (int) (52 * Math.random());
@@ -302,24 +285,27 @@ public class ControllerJocNou {
                                 Log.setText(Log.getText() + "\nOponentul sta.");
                             }else{
                                 Log.setText(Log.getText() + "\nOponentul pariaza.");
-                                rundaNoua();
                             }
                         }
-                        pass.setDisable(false);
-                        pariaza.setDisable(false);
+                        conditieCastig();
                         break;
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                case 6:
+                    passCalculator = true;
+                    rundaNoua();
             }
         } else System.out.println(Log.getText() + "\nOponentul sta.");
+
     }
 
     public void reset() {
             suma = 0;
             sumaDealer = 0;
-            numarCartiManaJucator = 1;
-            numarCartiManaDealer = 1;
+            numarCartiManaJucator = 0;
+            numarCartiManaDealer = 0;
+
             passCalculator = false;
             passJucator = false;
 
@@ -343,10 +329,8 @@ public class ControllerJocNou {
     }
 
     public void conditieCastig() {
-
-        if(suma == 21 && !(sumaDealer==21)){
-
 //player wins
+        if(suma == 21 && !(sumaDealer==21) && passCalculator){
             Log.setText(Log.getText() + "\nAti castigat cu " + suma + " puncte!");
             arataCarti();
             Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + suma + " puncte!", ButtonType.OK);
@@ -355,9 +339,9 @@ public class ControllerJocNou {
                 reset();
             }
         }
-
-        else if(suma == 21 && sumaDealer==21){
 //draw
+        else if(suma == 21 && sumaDealer==21){
+
             Log.setText(Log.getText() + "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer);
             arataCarti();
             Alert alert = new Alert(Alert.AlertType.NONE, "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer, ButtonType.OK);
@@ -367,9 +351,9 @@ public class ControllerJocNou {
 
             }
         }
-
-        else if(sumaDealer == 21 && !(suma==21)){
 //dealer wins
+        else if(sumaDealer == 21 && !(suma==21) && passJucator){
+
             Log.setText(Log.getText() + "\nOponentul a castigat cu : " + sumaDealer + " | Ati avut: " + suma);
             arataCarti();
             Alert alert = new Alert(Alert.AlertType.NONE, "\nOponentul a castigat cu : " + sumaDealer + " Ati avut: " + suma, ButtonType.OK);
@@ -378,9 +362,9 @@ public class ControllerJocNou {
                 reset();
             }
         }
-
-        else if(suma > 21 && !(sumaDealer > 21)){
 //dealer wins
+        else if(suma > 21 && !(sumaDealer > 21) && passCalculator){
+
             Log.setText(Log.getText() + "\nOponentul a castigat cu : " + sumaDealer + ". Ati avut: " + suma);
             arataCarti();
             Alert alert = new Alert(Alert.AlertType.NONE, "\nOponentul a castigat cu : " + sumaDealer + ". Ati avut: " + suma, ButtonType.OK);
@@ -389,20 +373,20 @@ public class ControllerJocNou {
                 reset();
             }
         }
-
-        else if(sumaDealer > 21 && !(suma > 21)){
 //player wins
+        else if(sumaDealer > 21 && !(suma > 21) && passJucator ){
+
             Log.setText(Log.getText() + "\nAti castigat cu " + suma + " puncte!");
             arataCarti();
-            Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + suma + " puncte!", ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + suma + " puncte! Oponentul a avut " + sumaDealer, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 reset();
             }
         }
-
-        else if(sumaDealer > 21 && suma > 21){
 //draw
+        else if(sumaDealer > 21 && suma > 21){
+
             Log.setText(Log.getText() + "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer);
             arataCarti();
             Alert alert = new Alert(Alert.AlertType.NONE, "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer, ButtonType.OK);
@@ -411,9 +395,9 @@ public class ControllerJocNou {
                 reset();
             }
         }
-
-        else if(suma < 21 && sumaDealer < 21 && passJucator && passCalculator){
 //vezi win conditie
+        else if(suma < 21 && sumaDealer < 21 && passJucator && passCalculator){
+
             if(suma > sumaDealer){
                 Log.setText(Log.getText() + "\nAti castigat cu " + suma + " puncte!");
                 arataCarti();
@@ -433,19 +417,17 @@ public class ControllerJocNou {
             }
         }
 
-        else if(suma < 21 && sumaDealer < 21 && passCalculator){
-            while(!passJucator)
-            randulJucatorului();
+        else if(suma < 21 && sumaDealer < 21 && passCalculator) {
+            rundaNoua();
         }
 
         else if(suma < 21 && sumaDealer < 21 && passJucator){
-            while(!passCalculator)
-            randulCalculatorului();
+                rundaNoua();
         }
 
-        // inseamna ca  suma == sumaDealer && passJucator=true && passCalculator= true
-        else if(suma == sumaDealer && passCalculator && passCalculator){
-//egalitate
+        //egalitate
+        else if(suma == sumaDealer && passCalculator && passJucator){
+
             Log.setText(Log.getText() + "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer);
             arataCarti();
             Alert alert = new Alert(Alert.AlertType.NONE, "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer, ButtonType.OK);
@@ -454,12 +436,12 @@ public class ControllerJocNou {
                 reset();
             }
         }
-
     }
 
     public void pass() {
         passJucator = true;
         pariaza.setDisable(true);
+        pass.setDisable(true);
         rundaNoua();
     }
 

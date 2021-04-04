@@ -9,18 +9,22 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 public class ControllerMain {
     static Stage stageMeniuPrincipal;
     @FXML
     Button butonJocNou;
 
+    @FXML
+    WebView webView;
 
     public void exit() {
         Platform.exit();
