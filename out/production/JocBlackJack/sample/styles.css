@@ -1,6 +1,6 @@
 * {
     -fx-font-family: "Courier New";
-    -fx-font-size: 30;
+    -fx-font-size: 25;
     -fx-font-weight: 800;
 }
 
@@ -20,20 +20,22 @@
    -fx-padding: 10;
    -fx-spacing: 8;
 }
-#scoruri{
-   -fx-background-image: url('file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/Resurse/highscores.gif');
-   -fx-background-repeat: stretch;
-   -fx-background-position: center center;
-   -fx-border-color: #2e8b57;
-   -fx-padding: 10;
-   -fx-spacing: 8;
+
+#setari{
+    -fx-background-image: url("file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/src/sample/Resurse/fundalSetari.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+
+}
+
+#rezolutie, #culoare, #sunet{
+    -fx-text-fill: white;
+
 }
 .button{
   -fx-background-color:#fed;
-}
-
-#pariazaJocNou, #inapoiJocNou{
-    -fx-font-size: 5;
 }
 
 #Log{

@@ -5,36 +5,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
-import javafx.stage.Stage;
 import javafx.scene.control.Button;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
+import javafx.scene.control.ChoiceBox;
+import javafx.stage.Stage;
 
 public class ControllerMain {
     static Stage stageMeniuPrincipal;
     @FXML
     Button butonJocNou;
 
-    @FXML
-    WebView webView;
-
     public void exit() {
         Platform.exit();
     }
 
-    public void jocNou(MouseEvent mouseEvent) {
+    public void jocNou() {
        stageMeniuPrincipal = (Stage) butonJocNou.getScene().getWindow();
         stageMeniuPrincipal.hide();
             try {
-
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("jocNou.fxml"));
                 Parent root2 = (Parent) fxmlLoader.load();
                 Scene scenaScoruri = new Scene(root2, 1280, 720);
@@ -51,24 +38,21 @@ public class ControllerMain {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
-
     }
 
-    public void handleButtonAction(MouseEvent mouseEvent) {
+    public void setari() {
         try {
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("scoruri.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("setari.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
-            Scene scenaScoruri = new Scene(root1, 500, 480);
+            Scene scenaScoruri = new Scene(root1, 700, 600);
             Stage scoruri = new Stage();
 
-            scoruri.setTitle("SCORURI");
+            scoruri.setTitle("SETARI");
             scoruri.setScene(scenaScoruri);
             scoruri.setResizable(false);
 
-            root1.setId("scoruri");
+            root1.setId("setari");
             String css = this.getClass().getResource("styles.css").toExternalForm();
             root1.getStylesheets().add(css);
             scoruri.show();
@@ -80,4 +64,5 @@ public class ControllerMain {
     public void reguli(){
 
     }
+
 }

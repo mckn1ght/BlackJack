@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerSetari">
+   <center>
+      <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+          <Label fx:id="rezolutie" text="Rezolutie" >
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+          <ComboBox prefHeight="50" prefWidth="300" value="1280 x 720" GridPane.columnIndex="1" GridPane.rowIndex="0">
+              <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="1920 x 1080" />
+                      <String fx:value="1600 x 1200" />
+                      <String fx:value="1280 x 720" />
+                  </FXCollections>
+              </items>
+          </ComboBox>
+            <Label fx:id="culoare" text="Culoare carti" GridPane.rowIndex="1">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+            <ComboBox prefHeight="50" prefWidth="300" value="Rosu" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Rosu" />
+                        <String fx:value="Albastru" />
+                        <String fx:value="Verde" />
+                        <String fx:value="Mov" />
+                        <String fx:value="Gri" />
+                        <String fx:value="Galben" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label fx:id="sunet" text="Sunet"  GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+          <ComboBox prefHeight="50" prefWidth="300" value="Oprit" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Pornit" />
+                      <String fx:value="Oprit" />
+                  </FXCollections>
+              </items>
+          </ComboBox>
+      </GridPane>
+   </center>
+   <bottom>
+      <Button fx:id="inapoiScor" onMouseClicked="#inapoi" prefHeight="50" prefWidth="400" text="SALVEAZA OPTIUNI" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+   </bottom>
+    
+</BorderPane>

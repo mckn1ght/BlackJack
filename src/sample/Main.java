@@ -25,7 +25,6 @@ public class Main extends Application {
         root.getStylesheets().add(css);
         primaryStage.setResizable(false);
         primaryStage.show();
-
         pachetDeCarti.show();
 
     }
