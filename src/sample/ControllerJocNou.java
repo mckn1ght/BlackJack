@@ -31,6 +31,7 @@ public class ControllerJocNou {
     int c1, c2, c3, c4, c5, c6, cd1, cd2, cd3, cd4, cd5, cd6, alegere;
 
     public void inapoi() {
+        ControllerMain.clickButon();
         reset();
         Stage stage = (Stage) inapoi.getScene().getWindow();
         stage.close();
@@ -44,7 +45,9 @@ public class ControllerJocNou {
     }
 
     public void randulJucatorului() {
+
         if (!passJucator) {
+            ControllerMain.clickButon();
             switch (numarCartiManaJucator) {
                 case 0:
                     try {
@@ -439,6 +442,7 @@ public class ControllerJocNou {
     }
 
     public void pass() {
+        ControllerMain.clickButon();
         passJucator = true;
         pariaza.setDisable(true);
         pass.setDisable(true);

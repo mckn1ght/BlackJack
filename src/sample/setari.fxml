@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerSetari">
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerSetari" >
    <center>
       <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -22,7 +22,7 @@
             <font>
                <Font size="20.0" />
             </font></Label>
-          <ComboBox prefHeight="50" prefWidth="300" value="1280 x 720" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <ComboBox fx:id="setareRezolutie" prefHeight="50" prefWidth="300" value="1280 x 720" GridPane.columnIndex="1" GridPane.rowIndex="0">
               <items>
                   <FXCollections fx:factory="observableArrayList">
                       <String fx:value="1920 x 1080" />
@@ -31,27 +31,27 @@
                   </FXCollections>
               </items>
           </ComboBox>
-            <Label fx:id="culoare" text="Culoare carti" GridPane.rowIndex="1">
+            <Label  fx:id="culoare" text="Culoare carti" GridPane.rowIndex="1">
             <font>
                <Font size="20.0" />
             </font></Label>
-            <ComboBox prefHeight="50" prefWidth="300" value="Rosu" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox fx:id="setareSpateCarte" prefHeight="50" prefWidth="300" value="Rosu" GridPane.columnIndex="1" GridPane.rowIndex="1">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="Rosu" />
                         <String fx:value="Albastru" />
-                        <String fx:value="Verde" />
-                        <String fx:value="Mov" />
-                        <String fx:value="Gri" />
                         <String fx:value="Galben" />
+                        <String fx:value="Gri" />
+                        <String fx:value="Mov" />
+                        <String fx:value="Rosu" />
+                        <String fx:value="Verde" />
                     </FXCollections>
                 </items>
             </ComboBox>
-            <Label fx:id="sunet" text="Sunet"  GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Label  fx:id="sunet" text="Sunet"  GridPane.columnIndex="0" GridPane.rowIndex="2">
             <font>
                <Font size="20.0" />
             </font></Label>
-          <ComboBox prefHeight="50" prefWidth="300" value="Oprit" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <ComboBox fx:id="setareSunet" prefHeight="50" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="2" value="Pornit" >
               <items>
                   <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Pornit" />
@@ -62,7 +62,7 @@
       </GridPane>
    </center>
    <bottom>
-      <Button fx:id="inapoiScor" onMouseClicked="#inapoi" prefHeight="50" prefWidth="400" text="SALVEAZA OPTIUNI" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+      <Button fx:id="inapoiScor" prefHeight="50" prefWidth="400" text="SALVEAZA OPTIUNI" textAlignment="CENTER" BorderPane.alignment="CENTER" onMouseClicked="#inapoi"/>
    </bottom>
     
 </BorderPane>
