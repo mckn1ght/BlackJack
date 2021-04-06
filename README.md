@@ -68,6 +68,7 @@ RO Versiunea 0.75
 -   Acum calculatorul face alegeri de joc in functie de numarul de puncte detinute           
 -   Am reparat un bug care intreruprea cursul normal al jocului  
 -   Meniul de scoruri a fost convertit in meniul pentru setari  
+-   Butoanele vor scoate un sunet cand sunt apasate  
 
 EN Version 0.75    
 
@@ -75,5 +76,6 @@ EN Version 0.75
    - Computer player now chooses if he pays or not based on the number of points he has    
    - Fixed a bug that was breaking the intended flow of the game  
    - Converted scoruri menu to setari      
+   - Butons will now make a sound when they are clicked  
 
 -------------------------------------------------------------------------------------------------------  
