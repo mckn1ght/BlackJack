@@ -9,6 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Optional;
@@ -48,6 +51,7 @@ public class ControllerJocNou {
 
         if (!passJucator) {
             ControllerMain.clickButon();
+            redaSunet("dealCard");
             switch (numarCartiManaJucator) {
                 case 0:
                     try {
@@ -136,6 +140,7 @@ public class ControllerJocNou {
 
     public void randulCalculatorului() {
         if (!passCalculator) {
+            redaSunet("dealCard");
             switch (numarCartiManaDealer) {
                 case 0:
                     try {
@@ -329,14 +334,18 @@ public class ControllerJocNou {
             pariaza.setDisable(false);
             pass.setDisable(true);
 
+            redaSunet("shuffle");
+
     }
 
     public void conditieCastig() {
 //player wins
         if(suma == 21 && !(sumaDealer==21) && passCalculator){
+            passJucator = true;
             Log.setText(Log.getText() + "\nAti castigat cu " + suma + " puncte!");
             arataCarti();
-            Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + suma + " puncte!", ButtonType.OK);
+            redaSunet("victorie");
+            Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + suma + " puncte! Oponentul a avut " + sumaDealer, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 reset();
@@ -344,9 +353,11 @@ public class ControllerJocNou {
         }
 //draw
         else if(suma == 21 && sumaDealer==21){
-
+            passCalculator = true;
+            passJucator = true;
             Log.setText(Log.getText() + "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer);
             arataCarti();
+            redaSunet("egalitate");
             Alert alert = new Alert(Alert.AlertType.NONE, "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -356,9 +367,10 @@ public class ControllerJocNou {
         }
 //dealer wins
         else if(sumaDealer == 21 && !(suma==21) && passJucator){
-
+            passCalculator = true;
             Log.setText(Log.getText() + "\nOponentul a castigat cu : " + sumaDealer + " | Ati avut: " + suma);
             arataCarti();
+            redaSunet("infrangere");
             Alert alert = new Alert(Alert.AlertType.NONE, "\nOponentul a castigat cu : " + sumaDealer + " Ati avut: " + suma, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -367,9 +379,9 @@ public class ControllerJocNou {
         }
 //dealer wins
         else if(suma > 21 && !(sumaDealer > 21) && passCalculator){
-
             Log.setText(Log.getText() + "\nOponentul a castigat cu : " + sumaDealer + ". Ati avut: " + suma);
             arataCarti();
+            redaSunet("infrangere");
             Alert alert = new Alert(Alert.AlertType.NONE, "\nOponentul a castigat cu : " + sumaDealer + ". Ati avut: " + suma, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -378,9 +390,9 @@ public class ControllerJocNou {
         }
 //player wins
         else if(sumaDealer > 21 && !(suma > 21) && passJucator ){
-
             Log.setText(Log.getText() + "\nAti castigat cu " + suma + " puncte!");
             arataCarti();
+            redaSunet("victorie");
             Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + suma + " puncte! Oponentul a avut " + sumaDealer, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -392,6 +404,7 @@ public class ControllerJocNou {
 
             Log.setText(Log.getText() + "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer);
             arataCarti();
+            redaSunet("egalitate");
             Alert alert = new Alert(Alert.AlertType.NONE, "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -404,7 +417,8 @@ public class ControllerJocNou {
             if(suma > sumaDealer){
                 Log.setText(Log.getText() + "\nAti castigat cu " + suma + " puncte!");
                 arataCarti();
-                Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + suma + " puncte!", ButtonType.OK);
+                redaSunet("victorie");
+                Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + suma + " puncte! Oponentul a avut " + sumaDealer, ButtonType.OK);
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == ButtonType.OK) {
                     reset();
@@ -412,6 +426,7 @@ public class ControllerJocNou {
             }else if(sumaDealer > suma){
                 Log.setText(Log.getText() + "\nOponentul a castigat cu : " + sumaDealer + ". Ati avut: " + suma);
                 arataCarti();
+                redaSunet("infrangere");
                 Alert alert = new Alert(Alert.AlertType.NONE, "\nOponentul a castigat cu : " + sumaDealer + ". Ati avut: " + suma, ButtonType.OK);
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -425,7 +440,7 @@ public class ControllerJocNou {
         }
 
         else if(suma < 21 && sumaDealer < 21 && passJucator){
-                rundaNoua();
+            rundaNoua();
         }
 
         //egalitate
@@ -433,10 +448,34 @@ public class ControllerJocNou {
 
             Log.setText(Log.getText() + "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer);
             arataCarti();
+            redaSunet("egalitate");
             Alert alert = new Alert(Alert.AlertType.NONE, "\nEgalitate! Ati avut "+ suma + ", iar oponentul a avut: " + sumaDealer, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 reset();
+            }
+        }
+
+        //daca se ajunge la nr maxim de carti admis in mana//
+        if(numarCartiManaDealer == 6 && numarCartiManaJucator == 6 && suma < 21 && sumaDealer < 21){
+            if(suma > sumaDealer){
+                Log.setText(Log.getText() + "\nAti castigat cu " + suma + " puncte!");
+                arataCarti();
+                redaSunet("victorie");
+                Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + suma + " puncte! Oponentul a avut " + sumaDealer, ButtonType.OK);
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    reset();
+                }
+            }else if(sumaDealer > suma){
+                Log.setText(Log.getText() + "\nOponentul a castigat cu : " + sumaDealer + ". Ati avut: " + suma);
+                arataCarti();
+                redaSunet("infrangere");
+                Alert alert = new Alert(Alert.AlertType.NONE, "\nOponentul a castigat cu : " + sumaDealer + ". Ati avut: " + suma, ButtonType.OK);
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    reset();
+                }
             }
         }
     }
@@ -508,4 +547,15 @@ public class ControllerJocNou {
         }
     }
 
+    public void redaSunet(String denumire){
+        if(Main.sunet.equals("Pornit")) {
+            try {
+                Clip clip = AudioSystem.getClip();
+                clip.open(AudioSystem.getAudioInputStream(new File("C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/src/sample/Resurse/" + denumire + ".wav")));
+                clip.start();
+            } catch (Exception exc) {
+                exc.printStackTrace(System.out);
+            }
+        }
+    }
 }

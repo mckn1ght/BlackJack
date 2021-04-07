@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import javax.sound.sampled.AudioSystem;
@@ -20,6 +19,7 @@ public class ControllerMain {
     Button butonJocNou;
 
     static int latimeRezolutie = 1280, inaltimeRezolutie = 720;
+    static  Clip muzicaMainMenu;
 
     public void exit() {
         clickButon();
@@ -71,16 +71,30 @@ public class ControllerMain {
             e.printStackTrace();
         }
     }
+
     public void reguli(){
 
     }
 
+    static public void music() {
+        if (Main.sunet.equals("Pornit")) {
+            try {
+                muzicaMainMenu = AudioSystem.getClip();
+                muzicaMainMenu.open(AudioSystem.getAudioInputStream(new File("C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/src/sample/Resurse/mainMenuMusic.wav")));
+                muzicaMainMenu.start();
+                muzicaMainMenu.loop(Clip.LOOP_CONTINUOUSLY);
+
+            } catch (Exception exc) {
+                exc.printStackTrace(System.out);
+            }
+        }
+    }
 
     static public void clickButon() {
         if(Main.sunet.equals("Pornit")) {
             try {
                 Clip clip = AudioSystem.getClip();
-                clip.open(AudioSystem.getAudioInputStream(new File("C:/Users/kodie/Desktop/clickButon.wav")));
+                clip.open(AudioSystem.getAudioInputStream(new File("C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/src/sample/Resurse/clickButon.wav")));
                 clip.start();
             } catch (Exception exc) {
                 exc.printStackTrace(System.out);

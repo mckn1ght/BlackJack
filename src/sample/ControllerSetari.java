@@ -1,7 +1,6 @@
 package sample;
 
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
@@ -70,6 +69,12 @@ public class ControllerSetari {
                 System.out.println("Oprit");
                 Main.sunet = "Oprit";
                 break;
+        }
+        if(Main.sunet.equals("Oprit")){
+            ControllerMain.muzicaMainMenu.stop();
+        }
+        else if(Main.sunet.equals("Pornit")){
+            ControllerMain.music();
         }
         ControllerMain.clickButon();
         Stage stage = (Stage) inapoiScor.getScene().getWindow();
