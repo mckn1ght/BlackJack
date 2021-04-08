@@ -70,6 +70,8 @@ RO Versiunea 0.75
 -   Meniul de scoruri a fost convertit in meniul pentru setari  
 -   Butoanele vor reda un sunet cand sunt apasate  
 -   Mai multe sunete au fost adaugate  
+-   Culoarea pachetului de carti poate fi schimbata din setari  
+-   Sunetul se poate se poate porni/opri din setari  
 
 EN Version 0.75    
 
@@ -79,5 +81,6 @@ EN Version 0.75
    - Converted scoruri menu to setari      
    - Butons will now make a sound when they are clicked  
    - Multiple sounds have been added  
-
+   - Playing card deck's color can now be changed in the settings menu  
+   - Sound can now be turned on/off in the settings menu  
 -------------------------------------------------------------------------------------------------------  
