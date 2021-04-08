@@ -28,25 +28,25 @@ public class ControllerMain {
 
     public void jocNou() {
         clickButon();
-       stageMeniuPrincipal = (Stage) butonJocNou.getScene().getWindow();
-       stageMeniuPrincipal.hide();
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("jocNou.fxml"));
-                Parent root2 = (Parent) fxmlLoader.load();
-                Scene scenaSetari = new Scene(root2, latimeRezolutie, inaltimeRezolutie);
-                Stage jocNou = new Stage();
+        stageMeniuPrincipal = (Stage) butonJocNou.getScene().getWindow();
+        stageMeniuPrincipal.hide();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("jocNou.fxml"));
+            Parent root2 = (Parent) fxmlLoader.load();
+            Scene scenaJocNou = new Scene(root2, latimeRezolutie, inaltimeRezolutie);
+            Stage jocNou = new Stage();
 
-                jocNou.setTitle("Blackjack");
-                jocNou.setScene(scenaSetari);
-                jocNou.setResizable(false);
+            jocNou.setTitle("Blackjack");
+            jocNou.setScene(scenaJocNou);
+            jocNou.setResizable(false);
 
-                root2.setId("jocNou");
-                String css = this.getClass().getResource("styles.css").toExternalForm();
-                root2.getStylesheets().add(css);
-                jocNou.show();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            root2.setId("jocNou");
+            String css = this.getClass().getResource("styles.css").toExternalForm();
+            root2.getStylesheets().add(css);
+            jocNou.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void setari() {
@@ -80,13 +80,15 @@ public class ControllerMain {
         if (Main.sunet.equals("Pornit")) {
             try {
                 muzicaMainMenu = AudioSystem.getClip();
-                muzicaMainMenu.open(AudioSystem.getAudioInputStream(new File("C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/src/sample/Resurse/mainMenuMusic.wav")));
+                muzicaMainMenu.open(AudioSystem.getAudioInputStream(new File("./Resurse/sunete/mainMenuMusic.wav")));
                 muzicaMainMenu.start();
                 muzicaMainMenu.loop(Clip.LOOP_CONTINUOUSLY);
 
             } catch (Exception exc) {
                 exc.printStackTrace(System.out);
             }
+        }else if(Main.sunet.equals("Oprit")){
+            muzicaMainMenu.stop();
         }
     }
 
@@ -94,7 +96,7 @@ public class ControllerMain {
         if(Main.sunet.equals("Pornit")) {
             try {
                 Clip clip = AudioSystem.getClip();
-                clip.open(AudioSystem.getAudioInputStream(new File("C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/src/sample/Resurse/clickButon.wav")));
+                clip.open(AudioSystem.getAudioInputStream(new File("./Resurse/sunete/clickButon.wav")));
                 clip.start();
             } catch (Exception exc) {
                 exc.printStackTrace(System.out);

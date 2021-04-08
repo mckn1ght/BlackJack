@@ -7,7 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    public PachetDeCarti pachetDeCarti = new PachetDeCarti();
+
+    PachetDeCarti pachetDeCarti = new PachetDeCarti();
     static int latimeRezolutie = 1280, inaltimeRezolutie = 720;
     static String culoare = "Rosu", sunet = "Pornit";
 
@@ -29,7 +30,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-
     }
 
 

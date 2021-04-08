@@ -20,8 +20,8 @@ public class PachetDeCarti
         int i = 0;
         for (int k = 0; k < 4; k++) {
             for (int valoare = 1; valoare <= 13; valoare++) {
-                fata = "src/sample/PachetCarti/" + id + ".jpg";
-                spate = "src/sample/PachetCarti/Red_back.jpg";
+                fata = "./Resurse/PachetCarti/" + id + ".jpg";
+                spate = "./Resurse/PachetCarti/" + Main.culoare + ".jpg";
                 pachetDeCarti[i++] = new PachetDeCarti(id, simbolInitializare[k], valoare, fata, spate);
                 id++;
             }
@@ -44,6 +44,12 @@ public class PachetDeCarti
         for(int i = 0; i< pachetDeCarti.length;i++) {
             System.out.println(pachetDeCarti[i].id + " " + pachetDeCarti[i].valoare + " " + pachetDeCarti[i].simbol + " " + " " + pachetDeCarti[i].nrPuncte + " " + pachetDeCarti[i].fata +  " " + pachetDeCarti[i].spate);
 
+        }
+    }
+
+    static public void schimbaCuloarePachet(String culoare){
+        for(int i = 0 ; i < pachetDeCarti.length; i++){
+            pachetDeCarti[i].spate = "./Resurse/PachetCarti/" + Main.culoare + ".jpg";
         }
     }
 

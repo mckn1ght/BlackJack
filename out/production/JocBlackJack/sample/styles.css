@@ -5,28 +5,23 @@
 }
 
 #mainMenu{
-   -fx-background-image: url('file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/Resurse/BackgroundMeniu.gif');
-   -fx-background-repeat: stretch;
+   -fx-background-image: url("../../../../Resurse/imagini/BackgroundMeniu.gif");
+   -fx-background-size:     cover;
+   -fx-background-repeat:   no-repeat;
    -fx-background-position: center center;
-   -fx-border-color: #2e8b57;
-   -fx-padding: 10;
-   -fx-spacing: 8;
 }
 #jocNou{
-   -fx-background-image: url('file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/Resurse/masa.jpg');
-   -fx-background-repeat: stretch;
+   -fx-background-image: url("../../../../Resurse/imagini/masa.jpg");
+   -fx-background-size:     cover;
+   -fx-background-repeat:   no-repeat;
    -fx-background-position: center center;
-   -fx-border-color: #2e8b57;
-   -fx-padding: 10;
-   -fx-spacing: 8;
 }
 
 #setari{
-    -fx-background-image: url("file:///C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/src/sample/Resurse/fundalSetari.jpg");
-    -fx-background-repeat: stretch;
+    -fx-background-image: url("../../../../Resurse/imagini/fundalSetari.jpg");
+    -fx-background-size:     cover;
+    -fx-background-repeat:   no-repeat;
     -fx-background-position: center center;
-    -fx-padding: 10;
-    -fx-spacing: 8;
 
 }
 

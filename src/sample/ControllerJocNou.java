@@ -551,7 +551,7 @@ public class ControllerJocNou {
         if(Main.sunet.equals("Pornit")) {
             try {
                 Clip clip = AudioSystem.getClip();
-                clip.open(AudioSystem.getAudioInputStream(new File("C:/Users/kodie/Documents/IntelliJProjects/JocBlackJack/src/sample/Resurse/" + denumire + ".wav")));
+                clip.open(AudioSystem.getAudioInputStream(new File("./Resurse/sunete/" + denumire + ".wav")));
                 clip.start();
             } catch (Exception exc) {
                 exc.printStackTrace(System.out);

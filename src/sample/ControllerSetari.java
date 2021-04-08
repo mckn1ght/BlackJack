@@ -70,12 +70,9 @@ public class ControllerSetari {
                 Main.sunet = "Oprit";
                 break;
         }
-        if(Main.sunet.equals("Oprit")){
-            ControllerMain.muzicaMainMenu.stop();
-        }
-        else if(Main.sunet.equals("Pornit")){
-            ControllerMain.music();
-        }
+        ControllerMain.music();
+
+        PachetDeCarti.schimbaCuloarePachet(Main.culoare);
         ControllerMain.clickButon();
         Stage stage = (Stage) inapoiScor.getScene().getWindow();
         stage.close();
