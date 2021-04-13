@@ -11,10 +11,10 @@ public class PachetDeCarti
 
 
     public PachetDeCarti( ) {
-        simbolInitializare[0] = "Trefla";
-        simbolInitializare[1] = "Caro";
-        simbolInitializare[2] = "Inima Rosie";
-        simbolInitializare[3] = "Inima Neagra";
+        simbolInitializare[0] = "♣";
+        simbolInitializare[1] = "♦";
+        simbolInitializare[2] = "♥";
+        simbolInitializare[3] = "♠";
 
         pachetDeCarti = new PachetDeCarti[numarCarti];
         int i = 0;
@@ -37,7 +37,10 @@ public class PachetDeCarti
         nrPuncte = valoare;
         if(nrPuncte > 10)
             nrPuncte = 10;
-        this.nrPuncte = nrPuncte;
+        if(this.id == 1 || this.id == 14 || this.id == 27 || this.id == 40)
+        {
+            nrPuncte = 11;
+        }
     }
 
     public void show(){
