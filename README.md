@@ -83,4 +83,16 @@ EN Version 0.75
    - Multiple sounds have been added  
    - Playing card deck's color can now be changed in the settings menu  
    - Sound can now be turned on/off in the settings menu  
+   
+-------------------------------------------------------------------------------------------------------  
+RO Versiunea 0.80
+
+   - Am schimbat codul pentru ca jocul sa se desfasoare mai mult precum jocul original de BlackJack  
+   - Am creat clasa "Jucatori" pentru a "aerisi" codul 
+   
+EN Version 0.80
+
+   - Changed the flow of the game to act according to the official rules and player turns  
+   - Players now turned into  class objects to have a cleaner code   
+
 -------------------------------------------------------------------------------------------------------  
