@@ -14,6 +14,7 @@ import javax.sound.sampled.Clip;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class ControllerJocNou {
@@ -32,6 +33,8 @@ public class ControllerJocNou {
     Jucator oponent = new Jucator();
 
     int alegere;
+    static ArrayList<Integer> idCartiExtrase = new ArrayList<Integer>();
+
 
     public void inapoi() {
         ControllerMain.clickButon();
@@ -42,6 +45,7 @@ public class ControllerJocNou {
     }
 
     public void rundaNoua() {
+
         if(!jucator.pass || !jucator.blackjack || !jucator.bust) {
             jucator.joaca(cartea1, cartea2, cartea3, cartea4, cartea5, cartea6);
             pass.setDisable(false);
@@ -80,6 +84,7 @@ public class ControllerJocNou {
     }
 
     public void reset() {
+        idCartiExtrase.clear();
 
         cartea1.setImage(null);
         cartea2.setImage(null);
@@ -104,10 +109,10 @@ public class ControllerJocNou {
 
     public void conditieCastig() {
         if(jucator.blackjack){
-            Log.setText(Log.getText() + "\nAti castigat cu " + jucator.puncte + " puncte!");
+            Log.setText(Log.getText() + "\n1Ati castigat cu " + jucator.puncte + " puncte!");
             arataCarti();
             redaSunet("victorie");
-            Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + jucator.puncte + " puncte! Oponentul a avut " + oponent.puncte, ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.NONE, "1Ati castigat cu " + jucator.puncte + " puncte! Oponentul a avut " + oponent.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 reset();
@@ -115,20 +120,20 @@ public class ControllerJocNou {
         }
 
         else if(oponent.blackjack){
-            Log.setText(Log.getText() + "\nOponentul a castigat cu : " + oponent.puncte + " | Ati avut: " + jucator.puncte);
+            Log.setText(Log.getText() + "\n2Oponentul a castigat cu : " + oponent.puncte + " | Ati avut: " + jucator.puncte);
             arataCarti();
             redaSunet("infrangere");
-            Alert alert = new Alert(Alert.AlertType.NONE, "\nOponentul a castigat cu : " + oponent.puncte + " Ati avut: " + jucator.puncte, ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.NONE, "\n2Oponentul a castigat cu : " + oponent.puncte + " Ati avut: " + jucator.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 reset();
             }
         }
         else if(jucator.bust &&  !oponent.pass && !oponent.bust){
-            Log.setText(Log.getText() + "\nOponentul a castigat cu : " + oponent.puncte + " | Ati avut: " + jucator.puncte);
+            Log.setText(Log.getText() + "\n3Oponentul a castigat cu : " + oponent.puncte + " | Ati avut: " + jucator.puncte);
             arataCarti();
             redaSunet("infrangere");
-            Alert alert = new Alert(Alert.AlertType.NONE, "\nOponentul a castigat cu : " + oponent.puncte + " Ati avut: " + jucator.puncte, ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.NONE, "\n3Oponentul a castigat cu : " + oponent.puncte + " Ati avut: " + jucator.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 reset();
@@ -136,10 +141,10 @@ public class ControllerJocNou {
         }
 
         else if(!jucator.bust && oponent.bust){
-            Log.setText(Log.getText() + "\nAti castigat cu " + jucator.puncte + " puncte!");
+            Log.setText(Log.getText() + "\n3Ati castigat cu " + jucator.puncte + " puncte!");
             arataCarti();
             redaSunet("victorie");
-            Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + jucator.puncte + " puncte! Oponentul a avut " + oponent.puncte, ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.NONE, "3Ati castigat cu " + jucator.puncte + " puncte! Oponentul a avut " + oponent.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 reset();
@@ -147,10 +152,10 @@ public class ControllerJocNou {
         }
 
         else if(oponent.bust){
-            Log.setText(Log.getText() + "\nEgalitate! Ati avut "+ jucator.puncte + ", iar oponentul a avut: " + oponent.puncte);
+            Log.setText(Log.getText() + "\n4Egalitate! Ati avut "+ jucator.puncte + ", iar oponentul a avut: " + oponent.puncte);
             arataCarti();
             redaSunet("egalitate");
-            Alert alert = new Alert(Alert.AlertType.NONE, "\nEgalitate! Ati avut "+ jucator.puncte + ", iar oponentul a avut: " + oponent.puncte, ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.NONE, "\n4Egalitate! Ati avut "+ jucator.puncte + ", iar oponentul a avut: " + oponent.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 reset();
@@ -176,10 +181,6 @@ public class ControllerJocNou {
                 exc.printStackTrace(System.out);
             }
         }
-    }
-
-    public void verificaDuplicat() {
-
     }
 
     public void arataCarti(){

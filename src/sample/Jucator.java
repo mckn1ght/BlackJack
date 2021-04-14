@@ -5,6 +5,8 @@ import javafx.scene.image.ImageView;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.Iterator;
 
 public class Jucator {
     int numarCartiMana, puncte, nrAsiInMana, cartea1, cartea2, cartea3, cartea4, cartea5, cartea6;
@@ -27,16 +29,27 @@ public class Jucator {
 
     }
 
-    public void joaca(ImageView image1, ImageView image2,ImageView image3,ImageView image4,ImageView image5, ImageView image6) {
+    public void joaca(ImageView image1, ImageView image2, ImageView image3, ImageView image4, ImageView image5, ImageView image6) {
         if (!this.pass && this.puncte < 21 && !this.blackjack) {
             ControllerMain.clickButon();
             ControllerJocNou.redaSunet("dealCard");
             switch (this.numarCartiMana) {
                 case 0:
                     try {
-                        cartea1 = (int) (52 * Math.random());
+                        //cartea1
+                        do {
+                            cartea1 = (int) (52 * Math.random());
+                        }
+                        while (verificaDuplicat(cartea1));
+                        ControllerJocNou.idCartiExtrase.add(cartea1);
                         contorAsi(PachetDeCarti.pachetDeCarti[cartea1].id);
-                        cartea2 = (int) (52 * Math.random());
+                        //cartea 2
+                        do {
+                            cartea2 = (int) (52 * Math.random());
+                        }
+                        while (verificaDuplicat(cartea2));
+
+                        ControllerJocNou.idCartiExtrase.add(cartea2);
                         contorAsi(PachetDeCarti.pachetDeCarti[cartea2].id);
 
                         InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[cartea1].fata);
@@ -60,9 +73,14 @@ public class Jucator {
 
                 case 2:
                     try {
-                        cartea3 = (int) (52 * Math.random());
-                        contorAsi(PachetDeCarti.pachetDeCarti[cartea3].id);
+                        //cartea 3
+                        do {
+                            cartea3 = (int) (52 * Math.random());
+                        }
+                        while (verificaDuplicat(cartea3));
+                        ControllerJocNou.idCartiExtrase.add(cartea3);
 
+                        contorAsi(PachetDeCarti.pachetDeCarti[cartea3].id);
                         InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[cartea3].fata);
                         Image img3 = new Image(stream);
                         image3.setImage(img3);
@@ -76,7 +94,13 @@ public class Jucator {
 
                 case 3:
                     try {
-                        cartea4 = (int) (52 * Math.random());
+                        //cartea 4
+                        do {
+                            cartea4 = (int) (52 * Math.random());
+                        }
+                        while (verificaDuplicat(cartea4));
+                        ControllerJocNou.idCartiExtrase.add(cartea4);
+
                         contorAsi(PachetDeCarti.pachetDeCarti[cartea4].id);
                         InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[cartea4].fata);
                         Image img4 = new Image(stream);
@@ -91,7 +115,13 @@ public class Jucator {
 
                 case 4:
                     try {
-                        cartea5 = (int) (52 * Math.random());
+                        //cartea 5
+                        do {
+                            cartea5 = (int) (52 * Math.random());
+                        }
+                        while (verificaDuplicat(cartea5));
+                        ControllerJocNou.idCartiExtrase.add(cartea5);
+
                         contorAsi(PachetDeCarti.pachetDeCarti[cartea5].id);
                         InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[cartea5].fata);
                         Image img5 = new Image(stream);
@@ -106,7 +136,13 @@ public class Jucator {
 
                 case 5:
                     try {
-                        cartea6 = (int) (52 * Math.random());
+                        //cartea 6
+                        do {
+                            cartea6 = (int) (52 * Math.random());
+                        }
+                        while (verificaDuplicat(cartea6));
+                        ControllerJocNou.idCartiExtrase.add(cartea6);
+
                         contorAsi(PachetDeCarti.pachetDeCarti[cartea6].id);
                         InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[cartea6].fata);
                         Image img6 = new Image(stream);
@@ -123,7 +159,7 @@ public class Jucator {
         System.out.println("Nr carti mana:" + numarCartiMana);
     }
 
-    public void reset(){
+    public void reset() {
         this.numarCartiMana = 0;
         this.puncte = 0;
         this.nrAsiInMana = 0;
@@ -138,28 +174,27 @@ public class Jucator {
         this.blackjack = false;
     }
 
-    public void verificaEligibilitateContinuare(){
-        if(this.puncte == 21){
+    public void verificaEligibilitateContinuare() {
+        if (this.puncte == 21) {
             blackjack();
-        }
-        else if(this.puncte > 21) {
+        } else if (this.puncte > 21) {
             bust();
         }
     }
 
-    public void pass(){
+    public void pass() {
         this.pass = true;
     }
 
-    public void bust(){
+    public void bust() {
         this.bust = true;
     }
 
-    public void blackjack(){
+    public void blackjack() {
         this.blackjack = true;
     }
 
-    public void verificaAsi(){
+    public void verificaAsi() {
         while (this.puncte > 21 && this.nrAsiInMana > 0) {
             this.puncte = this.puncte - 10;
             this.nrAsiInMana--;
@@ -169,9 +204,14 @@ public class Jucator {
     public void contorAsi(int idCarte) {
         if (idCarte == 1 || idCarte == 14 || idCarte == 27 || idCarte == 40) {
             this.nrAsiInMana++;
-            System.out.println("Found Player ace on number " + idCarte +  " nrAsi = " + this.nrAsiInMana);
+            System.out.println("Found Player ace on number " + idCarte + " nrAsi = " + this.nrAsiInMana);
         }
     }
 
-
+    public boolean verificaDuplicat(int k) {
+        if(ControllerJocNou.idCartiExtrase.contains(k)){
+            return true;
+        }
+        return false;
+    }
 }
