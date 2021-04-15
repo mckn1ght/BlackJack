@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerJocNou">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="1104.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerJocNou">
    <right>
       <VBox prefHeight="202.0" prefWidth="165.0" spacing="50" BorderPane.alignment="CENTER">
-            <Button fx:id="pariaza" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Call" onMouseClicked="#rundaNoua" />
-            <Button fx:id="pass" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Pass" onMouseClicked="#pass" disable="true" />
-            <Button fx:id="inapoi" mnemonicParsing="false" onMouseClicked="#inapoi" prefHeight="50.0" prefWidth="150" text="Inapoi" />
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets></VBox>
+            <Button fx:id="hit" mnemonicParsing="false" onMouseClicked="#rundaNoua" prefHeight="40.0" prefWidth="150.0" text="Hit" />
+            <Button fx:id="pass" disable="true" mnemonicParsing="false" onMouseClicked="#pass" prefHeight="40.0" prefWidth="150.0" text="Pass" />
+            <Button fx:id="pariaza" mnemonicParsing="false"  prefHeight="40.0" prefWidth="150" text="Pariaza" onMouseClicked="#pariaza" />
+            <TextField fx:id="textFieldPariu"  visible="false" prefHeight="25.0" maxWidth="150" />
+            <Slider fx:id="sliderPariu" visible="false" min="1" max="30" maxWidth="150" onMouseDragged="#actualizeazaPariu"/>
+            <Button fx:id="inapoi" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#inapoi" prefHeight="40.0" prefWidth="150" text="Inapoi" />
+
+      </VBox>
    </right>
    <bottom>
-      <HBox prefHeight="300.0" prefWidth="200.0" BorderPane.alignment="CENTER" spacing="20" >
-            <TextArea fx:id="Log" prefHeight="300.0" prefWidth="600"   editable="false" />
-          <ImageView fx:id="cartea1"/>
-            <ImageView fx:id="cartea2"/>
-            <ImageView fx:id="cartea3"/>
-            <ImageView fx:id="cartea4"/>
-            <ImageView fx:id="cartea5"/>
-            <ImageView fx:id="cartea6"/>
-
+      <HBox prefHeight="150.0" prefWidth="200" spacing="20">
+            <TextArea fx:id="Log" editable="false" prefHeight="150.0" prefWidth="429.0" />
+            <ImageView fx:id="cartea1" />
+            <ImageView fx:id="cartea2" />
+            <ImageView fx:id="cartea3" />
+            <ImageView fx:id="cartea4" />
+            <ImageView fx:id="cartea5" />
+            <ImageView fx:id="cartea6" />
       </HBox>
    </bottom>
    <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" spacing="50">
-            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Credit:" textFill="#ee0000" underline="true">
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="50" BorderPane.alignment="CENTER">
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Credit: 30.0$" textFill="#ee0000" underline="true">
                <font>
                   <Font name="Courier New Bold" size="36.0" />
                </font>
             </Label>
-          <ImageView fx:id="carteDealer1"/>
-          <ImageView fx:id="carteDealer2"/>
-          <ImageView fx:id="carteDealer3"/>
-          <ImageView fx:id="carteDealer4"/>
-          <ImageView fx:id="carteDealer5"/>
-          <ImageView fx:id="carteDealer6"/>
+          <ImageView fx:id="carteDealer1" />
+          <ImageView fx:id="carteDealer2" />
+          <ImageView fx:id="carteDealer3" />
+          <ImageView fx:id="carteDealer4" />
+          <ImageView fx:id="carteDealer5" />
+          <ImageView fx:id="carteDealer6" />
       </HBox>
    </top>
    <left>

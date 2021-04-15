@@ -1,9 +1,3 @@
-* {
-    -fx-font-family: "Courier New";
-    -fx-font-size: 25;
-    -fx-font-weight: 800;
-}
-
 #mainMenu{
    -fx-background-image: url("../../../../Resurse/imagini/BackgroundMeniu.gif");
    -fx-background-size:     cover;
@@ -27,14 +21,21 @@
 
 #rezolutie, #culoare, #sunet{
     -fx-text-fill: white;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 25;
+    -fx-font-weight: 800;
 
 }
-.button{
-  -fx-background-color:#fed;
+
+.button, #setareRezolutie, #setareSpateCarte, #setareSunet{
+    -fx-background-color:#fed;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 25;
+    -fx-font-weight: 800;
 }
 
 #Log{
-    -fx-font-size: 18px;
+    -fx-font-size: 13px;
     -fx-readonly: yes;
 }
 

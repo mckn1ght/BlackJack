@@ -5,12 +5,11 @@ import javafx.scene.image.ImageView;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.Iterator;
 
 public class Jucator {
     int numarCartiMana, puncte, nrAsiInMana, cartea1, cartea2, cartea3, cartea4, cartea5, cartea6;
     boolean pass, bust, blackjack;
+    double credit;
 
     public Jucator() {
         this.numarCartiMana = 0;
@@ -175,6 +174,7 @@ public class Jucator {
     }
 
     public void verificaEligibilitateContinuare() {
+        verificaAsi();
         if (this.puncte == 21) {
             blackjack();
         } else if (this.puncte > 21) {

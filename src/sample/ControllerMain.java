@@ -44,6 +44,8 @@ public class ControllerMain {
             String css = this.getClass().getResource("styles.css").toExternalForm();
             root2.getStylesheets().add(css);
             jocNou.show();
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
