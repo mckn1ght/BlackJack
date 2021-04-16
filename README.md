@@ -85,16 +85,21 @@ EN Version 0.75
    - Sound can now be turned on/off in the settings menu  
    
 -------------------------------------------------------------------------------------------------------  
+
 RO Versiunea 0.80
 
    - Am schimbat codul pentru ca jocul sa se desfasoare mai mult precum jocul original de BlackJack  
    - Am creat clasa "Jucatori" pentru a "aerisi" codul 
    - Jucatorii nu mai primesc carti duplicate, fiecare carte este acum unica  
+   - Am pregatit codul pentru un viitor sistem de pariuri  
+   - Am reparat mai multe probleme care tin de logica  
    
 EN Version 0.80
 
    - Changed the flow of the game to act according to the official rules and player turns  
    - Players now turned into  class objects to have a cleaner code   
    - Playing cards are now unique  
+   - Created the code for future betting system implementation  
+   - Multiple logic issues fixed  
 
 -------------------------------------------------------------------------------------------------------  
