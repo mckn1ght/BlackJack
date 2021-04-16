@@ -1,6 +1,9 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,7 +20,7 @@ import java.util.Optional;
 public class ControllerJocNou {
 
     @FXML
-    Button inapoi, hit, pass;
+    Button inapoi, hit, pass, colecteazaPariu, pariaza;
 
     @FXML
     ImageView cartea1, cartea2, cartea3, cartea4, cartea5, cartea6,
@@ -32,11 +35,15 @@ public class ControllerJocNou {
     @FXML
     TextArea Log;
 
+    @FXML
+    Label pot, credit, creditOponent;
+
     Jucator jucator = new Jucator();
     Jucator oponent = new Jucator();
 
     int alegere;
-    static ArrayList<Integer> idCartiExtrase = new ArrayList<Integer>();
+
+    static ArrayList<Integer> idCartiExtrase = new ArrayList<>();
 
 
     public void inapoi() {
@@ -50,6 +57,7 @@ public class ControllerJocNou {
     public void rundaNoua() {
 
         if(!jucator.pass || !jucator.blackjack || !jucator.bust) {
+            pariaza.setDisable(false);
             jucator.joaca(cartea1, cartea2, cartea3, cartea4, cartea5, cartea6);
             pass.setDisable(false);
             if(oponent.numarCartiMana == 0 ) {
@@ -66,7 +74,7 @@ public class ControllerJocNou {
         }
 
         if(jucator.pass || jucator.blackjack || jucator.bust){
-
+            hit.setDisable(true);
             // afiseaza a doua carte
             try {
                 InputStream stream = new FileInputStream(PachetDeCarti.pachetDeCarti[oponent.cartea2].fata);
@@ -107,8 +115,13 @@ public class ControllerJocNou {
         jucator.reset();
         oponent.reset();
 
+        pot.setVisible(false);
+        pot.setText("          ");
         pass.setDisable(true);
+        hit.setDisable(true);
         redaSunet("shuffle");
+
+        verificaCreditContinuare();
     }
 
     public void conditieCastig() {
@@ -118,6 +131,10 @@ public class ControllerJocNou {
             arataCarti();
             redaSunet("egalitate");
             Alert alert = new Alert(Alert.AlertType.NONE, "1Ambii jucatori au avut BLACKJACK !", ButtonType.OK);
+            jucator.adaugaCredit(Double.parseDouble(pot.getText()) / 2);
+            credit.setText("Creditul Dumneavoastra: " + jucator.credit);
+            oponent.adaugaCredit(Double.parseDouble(pot.getText()) / 2);
+            creditOponent.setText("Credit Oponent: " + oponent.credit);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 reset();
@@ -128,6 +145,8 @@ public class ControllerJocNou {
             Log.setText(Log.getText() + "\n2Ati castigat cu " + jucator.puncte + " puncte!");
             arataCarti();
             redaSunet("victorie");
+            jucator.adaugaCredit(Double.parseDouble(pot.getText()));
+            credit.setText("Creditul Dumneavoastra: " + jucator.credit);
             Alert alert = new Alert(Alert.AlertType.NONE, "2Ati castigat cu " + jucator.puncte + " puncte! Oponentul a avut " + oponent.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -139,6 +158,8 @@ public class ControllerJocNou {
             Log.setText(Log.getText() + "\n3Oponentul a castigat cu : " + oponent.puncte + " | Ati avut: " + jucator.puncte);
             arataCarti();
             redaSunet("infrangere");
+            oponent.adaugaCredit(Double.parseDouble(pot.getText()));
+            creditOponent.setText("Credit Oponent: " + oponent.credit);
             Alert alert = new Alert(Alert.AlertType.NONE, "\n3Oponentul a castigat cu : " + oponent.puncte + " Ati avut: " + jucator.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -149,6 +170,8 @@ public class ControllerJocNou {
             Log.setText(Log.getText() + "\n4Oponentul a castigat cu : " + oponent.puncte + " | Ati avut: " + jucator.puncte);
             arataCarti();
             redaSunet("infrangere");
+            oponent.adaugaCredit(Double.parseDouble(pot.getText()));
+            creditOponent.setText("Credit Oponent: " + oponent.credit);
             Alert alert = new Alert(Alert.AlertType.NONE, "\n4Oponentul a castigat cu : " + oponent.puncte + " Ati avut: " + jucator.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -160,6 +183,8 @@ public class ControllerJocNou {
             Log.setText(Log.getText() + "\n5Ati castigat cu " + jucator.puncte + " puncte!");
             arataCarti();
             redaSunet("victorie");
+            jucator.adaugaCredit(Double.parseDouble(pot.getText()));
+            credit.setText("Creditul Dumneavoastra: " + jucator.credit);
             Alert alert = new Alert(Alert.AlertType.NONE, "5Ati castigat cu " + jucator.puncte + " puncte! Oponentul a avut " + oponent.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -171,6 +196,8 @@ public class ControllerJocNou {
             Log.setText(Log.getText() + "\n6Ati castigat cu " + jucator.puncte + " puncte!");
             arataCarti();
             redaSunet("victorie");
+            jucator.adaugaCredit(Double.parseDouble(pot.getText()));
+            credit.setText("Creditul Dumneavoastra: " + jucator.credit);
             Alert alert = new Alert(Alert.AlertType.NONE, "6Ati castigat cu " + jucator.puncte + " puncte! Oponentul a avut " + oponent.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -182,6 +209,10 @@ public class ControllerJocNou {
             Log.setText(Log.getText() + "\n7Ambii jucatori au fost eliminati ! Ati avut " + jucator.puncte + " puncte! Oponentul dvs a avut: " + oponent.puncte);
             arataCarti();
             redaSunet("egalitate");
+            jucator.adaugaCredit(Double.parseDouble(pot.getText()) / 2);
+            credit.setText("Creditul Dumneavoastra: " + jucator.credit);
+            oponent.adaugaCredit(Double.parseDouble(pot.getText()) / 2);
+            creditOponent.setText("Credit Oponent: " + oponent.credit);
             Alert alert = new Alert(Alert.AlertType.NONE, "7Ambii jucatori au fost eliminati ! Ati avut " + jucator.puncte + " puncte! Oponentul dvs a avut: " + oponent.puncte, ButtonType.OK);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -194,6 +225,7 @@ public class ControllerJocNou {
         ControllerMain.clickButon();
         jucator.pass();
         rundaNoua();
+        pass.setDisable(true);
     }
 
     static public void redaSunet(String denumire) {
@@ -269,15 +301,56 @@ public class ControllerJocNou {
 
     public void pariaza(){
 
-        textFieldPariu.setText("0");
+        textFieldPariu.setText("1");
         sliderPariu.setMin(1);
-        sliderPariu.setMax(100);
+        if(jucator.credit > oponent.credit) {
+            sliderPariu.setMax(oponent.credit);
+        }
+        else sliderPariu.setMax(jucator.credit);
+
         sliderPariu.setVisible(true);
         textFieldPariu.setVisible(true);
+        colecteazaPariu.setVisible(true);
     }
 
     public void actualizeazaPariu(){
         textFieldPariu.setText(String.valueOf((int)sliderPariu.getValue()));
+    }
+
+    public void colecteazaPariu(){
+        int a = Integer.parseInt(textFieldPariu.getText());
+        sliderPariu.setVisible(false);
+        sliderPariu.setValue(sliderPariu.getMin());// dupa fiecare pariu, reseteaza sliderul in pozitia cea mai din stanga(1);
+        textFieldPariu.setVisible(false);
+        colecteazaPariu.setVisible(false);
+        pot.setVisible(true);
+        pot.setText("          " + 2 * Double.parseDouble(textFieldPariu.getText()));
+        hit.setDisable(false);
+        pariaza.setDisable(true);
+        oponent.eliminaCredit(Double.parseDouble(pot.getText()) / 2);
+        jucator.eliminaCredit(Double.parseDouble(pot.getText()) / 2);
+        credit.setText("Creditul Dumneavoastra: " + jucator.credit);
+        creditOponent.setText("Credit Oponent: " + oponent.credit);
+    }
+
+    public void verificaCreditContinuare() {
+        if (jucator.credit <= 0) {
+            redaSunet("infrangere");
+            Alert alert = new Alert(Alert.AlertType.NONE, "Ati ramas fara bani. Jocul s-a terminat, iar oponentul a castigat!", ButtonType.OK);
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                Stage stage = (Stage) pariaza.getScene().getWindow();
+                stage.close();
+            }
+        } else if (oponent.credit <= 0) {
+            redaSunet("victorie");
+            Alert alert = new Alert(Alert.AlertType.NONE, "Oponentul a ramas fara bani. Jocul s-a terminat, iar Dumneavoastra ati castigat! FELICITARI!", ButtonType.OK);
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                Stage stage = (Stage) pariaza.getScene().getWindow();
+                stage.close();
+            }
+        }
     }
 
 }

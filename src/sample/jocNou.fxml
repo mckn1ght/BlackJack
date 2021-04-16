@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="1104.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerJocNou">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="1104.0" stylesheets="@styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerJocNou">
    <right>
-      <VBox prefHeight="202.0" prefWidth="165.0" spacing="50" BorderPane.alignment="CENTER">
-            <Button fx:id="hit" mnemonicParsing="false" onMouseClicked="#rundaNoua" prefHeight="40.0" prefWidth="150.0" text="Hit" />
-            <Button fx:id="pass" disable="true" mnemonicParsing="false" onMouseClicked="#pass" prefHeight="40.0" prefWidth="150.0" text="Pass" />
-            <Button fx:id="pariaza" mnemonicParsing="false"  prefHeight="40.0" prefWidth="150" text="Pariaza" onMouseClicked="#pariaza" />
+      <VBox prefHeight="202.0" prefWidth="165.0" spacing="30" BorderPane.alignment="CENTER">
+            <Button fx:id="hit"  disable="true" maxHeight="30.0" prefWidth="150.0" text="Hit" onMouseClicked="#rundaNoua" />
+            <Button fx:id="pass" disable="true" maxHeight="30.0" prefWidth="150.0" text="Pass" onMouseClicked="#pass"/>
+            <Button fx:id="pariaza" maxHeight="30.0" prefWidth="150" text="Pariaza" onMouseClicked="#pariaza" />
             <TextField fx:id="textFieldPariu"  visible="false" prefHeight="25.0" maxWidth="150" />
-            <Slider fx:id="sliderPariu" visible="false" min="1" max="30" maxWidth="150" onMouseDragged="#actualizeazaPariu"/>
-            <Button fx:id="inapoi" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#inapoi" prefHeight="40.0" prefWidth="150" text="Inapoi" />
-
+            <Slider fx:id="sliderPariu" showTickMarks="true" visible="false" min="1" max="30" maxWidth="150" onMouseDragged="#actualizeazaPariu" onMouseClicked="#actualizeazaPariu"/>
+            <Button fx:id="colecteazaPariu" visible="false" maxHeight="30.0" prefWidth="150" text="Confirm" onMouseClicked="#colecteazaPariu"/>
+            <Button fx:id="inapoi" alignment="CENTER" onMouseClicked="#inapoi" maxHeight="30.0" prefWidth="150" text="Inapoi" />
       </VBox>
    </right>
    <bottom>
@@ -30,11 +28,10 @@
    </bottom>
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="50" BorderPane.alignment="CENTER">
-            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Credit: 30.0$" textFill="#ee0000" underline="true">
-               <font>
-                  <Font name="Courier New Bold" size="36.0" />
-               </font>
-            </Label>
+          <VBox>
+          <Label fx:id="credit" alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Creditul Dumneavoastra: 100.00" textFill="#ee0000"/>
+          <Label fx:id="creditOponent" alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Credit Oponent: 100.00" textFill="#ee0000"/>
+          </VBox>
           <ImageView fx:id="carteDealer1" />
           <ImageView fx:id="carteDealer2" />
           <ImageView fx:id="carteDealer3" />
@@ -46,4 +43,8 @@
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
    </left>
+    <center>
+        <Label fx:id="pot"  alignment="TOP_RIGHT" contentDisplay="RIGHT" visible="false" textFill="#ee0000">
+        </Label>
+    </center>
 </BorderPane>

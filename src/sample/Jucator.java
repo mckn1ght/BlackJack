@@ -24,6 +24,7 @@ public class Jucator {
         this.pass = false;
         this.bust = false;
         this.blackjack = false;
+        this.credit = 100.0;
 
 
     }
@@ -213,5 +214,13 @@ public class Jucator {
             return true;
         }
         return false;
+    }
+
+    public void adaugaCredit(Double a){
+        this.credit += a;
+    }
+
+    public void eliminaCredit(Double a){
+        this.credit -= a;
     }
 }
