@@ -34,9 +34,9 @@ EN Version 0.5
 
 RO Versiunea 0.6
 
--   Generarea pachetului de carti la lansarea aplicatiei  
--   Implementarea ferestrei principale a jocului  
--   Imaginile cartilor de joc din mana jucatorului sunt afisate in partea de jos a ecranului  
+   - Generarea pachetului de carti la lansarea aplicatiei  
+   - Implementarea ferestrei principale a jocului  
+   - Imaginile cartilor de joc din mana jucatorului sunt afisate in partea de jos a ecranului  
 
 
 EN Version 0.6  
@@ -49,9 +49,9 @@ EN Version 0.6
 
 RO Versiunea 0.7
 
--   Imaginea cartilor de joc acum se afiseaza corect  
--   Am adaugat jucatorul-calculator care momentan doar mimeaza miscarile jucatorului  
--   Imaginile cartilor de joc din mana jucatorului sunt afisate in partea de jos a ecranului  
+   - Imaginea cartilor de joc acum se afiseaza corect  
+   - Am adaugat jucatorul-calculator care momentan doar mimeaza miscarile jucatorului  
+   - Imaginile cartilor de joc din mana jucatorului sunt afisate in partea de jos a ecranului  
 
 
 EN Version 0.7  
@@ -64,14 +64,14 @@ EN Version 0.7
 
 RO Versiunea 0.75  
 
--   Am refacut mai multe metode   
--   Acum calculatorul face alegeri de joc in functie de numarul de puncte detinute           
--   Am reparat un bug care intreruprea cursul normal al jocului  
--   Meniul de scoruri a fost convertit in meniul pentru setari  
--   Butoanele vor reda un sunet cand sunt apasate  
--   Mai multe sunete au fost adaugate  
--   Culoarea pachetului de carti poate fi schimbata din setari  
--   Sunetul se poate se poate porni/opri din setari  
+   - Am refacut mai multe metode   
+   - Acum calculatorul face alegeri de joc in functie de numarul de puncte detinute           
+   - Am reparat un bug care intreruprea cursul normal al jocului  
+   - Meniul de scoruri a fost convertit in meniul pentru setari  
+   - Butoanele vor reda un sunet cand sunt apasate  
+   - Mai multe sunete au fost adaugate  
+   - Culoarea pachetului de carti poate fi schimbata din setari  
+   - Sunetul se poate se poate porni/opri din setari  
 
 EN Version 0.75    
 
@@ -103,3 +103,20 @@ EN Version 0.80
    - Multiple logic issues fixed  
 
 -------------------------------------------------------------------------------------------------------  
+
+RO Versiunea 0.90
+
+- Implementarea sistemului de pariuri  
+   - Jucatorii incep cu 100 de credite  
+   - Primul jucator care ajunge la 0 credite, pierde jocul  
+   - Valoarea potului actual se poate vedea in centrul ferestrei  
+
+EN Version 0.90
+
+- Implementation of the betting system  
+   - Both players start with 100 credits  
+   - First player that reaches 0 credits, loses the game  
+   - Added pot value in the middle of the playing table 
+  
+------------------------------------------------------------------------------------------------------- 
+  
