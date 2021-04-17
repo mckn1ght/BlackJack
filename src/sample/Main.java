@@ -10,7 +10,7 @@ public class Main extends Application {
 
     PachetDeCarti pachetDeCarti = new PachetDeCarti();
     static int latimeRezolutie = 1280, inaltimeRezolutie = 720;
-    static String culoare = "Rosu", sunet = "Pornit]";
+    static String culoare = "Rosu", sunet = "Pornit";
 
     @Override
     public void start(Stage primaryStage) throws Exception {

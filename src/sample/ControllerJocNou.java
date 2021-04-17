@@ -47,11 +47,12 @@ public class ControllerJocNou {
 
 
     public void inapoi() {
-        ControllerMain.clickButon();
+        ControllerJocNou.redaSunet("clickButon");
         reset();
         Stage stage = (Stage) inapoi.getScene().getWindow();
         stage.close();
         ControllerMain.stageMeniuPrincipal.show();
+        ControllerMain.music();// Reporneste muzica din meniul principal daca aceasta este de asemenea pornita din setari
     }
 
     public void rundaNoua() {
@@ -222,7 +223,7 @@ public class ControllerJocNou {
     }
 
     public void pass() {
-        ControllerMain.clickButon();
+        ControllerJocNou.redaSunet("clickButon");
         jucator.pass();
         rundaNoua();
         pass.setDisable(true);
@@ -300,7 +301,7 @@ public class ControllerJocNou {
     }
 
     public void pariaza(){
-
+        ControllerJocNou.redaSunet("clickButon");
         textFieldPariu.setText("1");
         sliderPariu.setMin(1);
         if(jucator.credit > oponent.credit) {
@@ -318,17 +319,19 @@ public class ControllerJocNou {
     }
 
     public void colecteazaPariu(){
-        int a = Integer.parseInt(textFieldPariu.getText());
+        ControllerJocNou.redaSunet("clickButon");
         sliderPariu.setVisible(false);
         sliderPariu.setValue(sliderPariu.getMin());// dupa fiecare pariu, reseteaza sliderul in pozitia cea mai din stanga(1);
         textFieldPariu.setVisible(false);
         colecteazaPariu.setVisible(false);
         pot.setVisible(true);
-        pot.setText("          " + 2 * Double.parseDouble(textFieldPariu.getText()));
+        if(pot.getText().trim().isEmpty()){
+            pot.setText("          " + 2 * Double.parseDouble(textFieldPariu.getText()));
+        }else pot.setText("          " +  (Double.valueOf(pot.getText()) + 2 * Double.parseDouble(textFieldPariu.getText())));
         hit.setDisable(false);
         pariaza.setDisable(true);
-        oponent.eliminaCredit(Double.parseDouble(pot.getText()) / 2);
-        jucator.eliminaCredit(Double.parseDouble(pot.getText()) / 2);
+        oponent.eliminaCredit(Double.parseDouble(textFieldPariu.getText()));
+        jucator.eliminaCredit(Double.parseDouble(textFieldPariu.getText()));
         credit.setText("Creditul Dumneavoastra: " + jucator.credit);
         creditOponent.setText("Credit Oponent: " + oponent.credit);
     }

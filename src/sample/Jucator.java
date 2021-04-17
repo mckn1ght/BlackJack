@@ -31,7 +31,7 @@ public class Jucator {
 
     public void joaca(ImageView image1, ImageView image2, ImageView image3, ImageView image4, ImageView image5, ImageView image6) {
         if (!this.pass && this.puncte < 21 && !this.blackjack) {
-            ControllerMain.clickButon();
+            ControllerJocNou.redaSunet("clickButon");
             ControllerJocNou.redaSunet("dealCard");
             switch (this.numarCartiMana) {
                 case 0:

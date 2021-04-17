@@ -7,7 +7,7 @@
            <VBox fx:id="vb" alignment="CENTER" spacing="30"  >
                <Button fx:id="butonJocNou" prefWidth="360" prefHeight="50"  text="JOC NOU" onMouseClicked="#jocNou" />
                <Button prefWidth="360" prefHeight="50"  text="SETARI" onMouseClicked="#setari" />
-               <Button prefWidth="360" prefHeight="50"  text="REGULI" />
+               <Button prefWidth="360" prefHeight="50"  text="REGULI" onMouseClicked="#reguli"/>
                <Button prefWidth="360" prefHeight="50"  text="IESIRE"  onMouseClicked="#exit" />
            </VBox>
        </center>

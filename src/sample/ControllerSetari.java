@@ -70,10 +70,10 @@ public class ControllerSetari {
                 Main.sunet = "Oprit";
                 break;
         }
-        ControllerMain.music();
 
+        ControllerMain.music();
         PachetDeCarti.schimbaCuloarePachet(Main.culoare);
-        ControllerMain.clickButon();
+        ControllerJocNou.redaSunet("clickButon");
         Stage stage = (Stage) inapoiScor.getScene().getWindow();
         stage.close();
 
