@@ -126,7 +126,7 @@ EN Version 0.90
 - "Reguli" button takes you to the official bicycle Blackjack rules 
 - Fixed a bug where main menu music could be played multiple times at once  
 - Fixed a bug where the current pot would reset from the 2nd round onwards  
-- Removed the rezolution change option and added master volume slider instead  
+- Removed the resolution change option and added master volume slider instead  
   
 ------------------------------------------------------------------------------------------------------- 
   
