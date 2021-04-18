@@ -11,6 +11,8 @@ public class Main extends Application {
     PachetDeCarti pachetDeCarti = new PachetDeCarti();
     static int latimeRezolutie = 1280, inaltimeRezolutie = 720;
     static String culoare = "Rosu", sunet = "Pornit";
+    static double nivelVolum = 1;
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {

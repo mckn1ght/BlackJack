@@ -6,10 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.BooleanControl;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -50,7 +53,6 @@ public class ControllerMain {
             root2.getStylesheets().add(css);
             jocNou.show();
 
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -72,7 +74,6 @@ public class ControllerMain {
             root1.setId("setari");
             String css = this.getClass().getResource("styles.css").toExternalForm();
             root1.getStylesheets().add(css);
-
             setari.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -100,7 +101,6 @@ public class ControllerMain {
                     muzicaMainMenu.open(AudioSystem.getAudioInputStream(new File("./Resurse/sunete/mainMenuMusic.wav")));
                     muzicaMainMenu.start();
                     muzicaMainMenu.loop(Clip.LOOP_CONTINUOUSLY);
-
                 } catch (Exception exc) {
                     exc.printStackTrace(System.out);
                 }

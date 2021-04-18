@@ -19,7 +19,7 @@
 
 }
 
-#rezolutie, #culoare, #sunet{
+#rezolutie, #culoare, #sunet, #nivelVolum{
     -fx-text-fill: white;
     -fx-font-family: "Courier New";
     -fx-font-size: 25;
@@ -27,7 +27,7 @@
 
 }
 
-.button, #setareRezolutie, #setareSpateCarte, #setareSunet{
+.button, #setareSpateCarte, #setareSunet{
     -fx-background-color:#fed;
     -fx-font-family: "Courier New";
     -fx-font-size: 25;
@@ -53,3 +53,8 @@
      -fx-graphic: url("../../../../Resurse/chips/chips.png");
 }
 
+#setareNivelVolum{
+ -fx-font-family: "Courier New";
+    -fx-font-size: 25;
+    -fx-font-weight: 800;
+}

@@ -3,7 +3,10 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Slider;
 import javafx.stage.Stage;
+
+import javax.sound.sampled.FloatControl;
 
 public class ControllerSetari {
 
@@ -11,27 +14,12 @@ public class ControllerSetari {
     Button inapoiScor;
 
     @FXML
-    ComboBox setareRezolutie, setareSpateCarte, setareSunet;
+    ComboBox setareSpateCarte, setareSunet;
+
+    @FXML
+    Slider setareNivelVolum;
 
     public void inapoi(){
-
-        switch (setareRezolutie.getValue().toString()) {
-            case "1920 x 1080":
-                System.out.println("1920 x 1080");
-                Main.latimeRezolutie = 1920;
-                Main.inaltimeRezolutie = 1080;
-                break;
-            case "1600 x 1200":
-                System.out.println("1600 x 1200");
-                Main.latimeRezolutie = 1600;
-                Main.inaltimeRezolutie = 1200;
-                break;
-            case "1280 x 720":
-                System.out.println("1280 x 720");
-                Main.latimeRezolutie = 1280;
-                Main.inaltimeRezolutie = 720;
-                break;
-        }
 
         switch (setareSpateCarte.getValue().toString()) {
             case "Albastru":
@@ -70,12 +58,21 @@ public class ControllerSetari {
                 Main.sunet = "Oprit";
                 break;
         }
-
+        Main.nivelVolum = setareNivelVolum.getValue();
+        System.out.println(Main.nivelVolum);
         ControllerMain.music();
         PachetDeCarti.schimbaCuloarePachet(Main.culoare);
         ControllerJocNou.redaSunet("clickButon");
         Stage stage = (Stage) inapoiScor.getScene().getWindow();
         stage.close();
 
+    }
+
+
+    public void seteazaNivelVolum(){
+        Main.nivelVolum = setareNivelVolum.getValue();
+        FloatControl gainControl = (FloatControl) ControllerMain.muzicaMainMenu.getControl(FloatControl.Type.MASTER_GAIN);
+        float dB = (float) (Math.log(setareNivelVolum.getValue()) / Math.log(10.0) * 20.0);
+        gainControl.setValue(dB);
     }
 }
