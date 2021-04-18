@@ -110,6 +110,10 @@ RO Versiunea 0.90
    - Jucatorii incep cu 100 de credite  
    - Primul jucator care ajunge la 0 credite, pierde jocul  
    - Valoarea potului actual se poate vedea in centrul ferestrei  
+- Imaginea de fundal din meniul principal a fost imbunatatita  
+- Butonul de reguli va deschide o fereastra catre regulile oficiale ale jocului (conform Bicycle)  
+- Am reparat un bug care facea ca muzica din meniul principal sa fie redata de mai multe ori in acelas timp  
+- Am reparat un bug care facea ca potul jucatorilor sa fie resetat incepand cu a doua runda  
 
 EN Version 0.90
 
@@ -117,6 +121,9 @@ EN Version 0.90
    - Both players start with 100 credits  
    - First player that reaches 0 credits, loses the game  
    - Added pot value in the middle of the playing table 
-  
+- Main menu background image was improved  
+- "Reguli" button takes you to the official bicycle Blackjack rules 
+- Fixed a bug where main menu music could be played multiple times at once  
+- Fixed a bug where the current pot would reset from the 2nd round onwards  
 ------------------------------------------------------------------------------------------------------- 
   
