@@ -129,4 +129,19 @@ EN Version 0.90
 - Removed the resolution change option and added master volume slider instead  
   
 ------------------------------------------------------------------------------------------------------- 
+
+RO Versiunea 1.0
+
+- Am eliminat importurile nefolosite  
+- Oponentul acum se opreste daca scorul sau se afla intre 17 si 20, conform regulilor oficiale  
+- Am curatat codul si am eliminat resursele(fisiere) nefolosite  
+- Oponentul primeste carti cu intarziere de o secunda pentru a simula jocul real  
+
+EN Version 1.0
+
+- Removed unused imports  
+- The opponent now passes if his score is between 17 and 20 according to the official rules of the game  
+- Cleaned the code and removed unused resource files      
+- The opponent now receives cards with 1 second delay to simulate the real game  
+
   
