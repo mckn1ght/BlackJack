@@ -114,6 +114,7 @@ RO Versiunea 0.90
 - Butonul de reguli va deschide o fereastra catre regulile oficiale ale jocului (conform Bicycle)  
 - Am reparat un bug care facea ca muzica din meniul principal sa fie redata de mai multe ori in acelas timp  
 - Am reparat un bug care facea ca potul jucatorilor sa fie resetat incepand cu a doua runda  
+- Optiunea pentru a seta nivelul general al volumului aplicatiei a inlocuit optiunea de schimbare a rezolutiei    
 
 EN Version 0.90
 
@@ -125,5 +126,7 @@ EN Version 0.90
 - "Reguli" button takes you to the official bicycle Blackjack rules 
 - Fixed a bug where main menu music could be played multiple times at once  
 - Fixed a bug where the current pot would reset from the 2nd round onwards  
+- Removed the resolution change option and added master volume slider instead  
+  
 ------------------------------------------------------------------------------------------------------- 
   
