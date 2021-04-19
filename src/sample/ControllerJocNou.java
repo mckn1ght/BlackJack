@@ -1,9 +1,6 @@
 package sample;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -41,8 +38,6 @@ public class ControllerJocNou {
 
     Jucator jucator = new Jucator();
     Jucator oponent = new Jucator();
-
-    int alegere;
 
     static ArrayList<Integer> idCartiExtrase = new ArrayList<>();
 
@@ -91,11 +86,21 @@ public class ControllerJocNou {
             }
 
             while(oponent.numarCartiMana < 6 && !oponent.bust && !oponent.pass && !oponent.blackjack){
+                if(oponent.puncte >=17 && oponent.puncte <= 20){
+                    oponent.pass = true;
+                    break;
+                }
                 oponent.joaca(carteDealer1, carteDealer2, carteDealer3, carteDealer4, carteDealer5, carteDealer6);
+
+                try {
+                    java.util.concurrent.TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                }
             }
             if(oponent.pass){
-                System.out.println("Dealerul se opreste.");
-                Log.setText(Log.getText() + "\nDealerul se opreste.");
+                System.out.println("Oponentul se opreste.");
+                Log.setText(Log.getText() + "\nOponentul se opreste.");
             }
         }
         conditieCastig();
@@ -224,6 +229,48 @@ public class ControllerJocNou {
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 reset();
             }
+        }
+
+        // remiza cu ambii jucatori pass
+        else if(jucator.pass && oponent.pass){
+            if(jucator.puncte > oponent.puncte) {
+                Log.setText(Log.getText() + "\nAti castigat cu " + jucator.puncte + " puncte!");
+                arataCarti();
+                redaSunet("victorie");
+                jucator.adaugaCredit(Double.parseDouble(pot.getText()));
+                credit.setText("Creditul Dumneavoastra: " + jucator.credit);
+                Alert alert = new Alert(Alert.AlertType.NONE, "Ati castigat cu " + jucator.puncte + " puncte! Oponentul a avut " + oponent.puncte, ButtonType.OK);
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    reset();
+                }
+            }
+            else if(jucator.puncte < oponent.puncte){
+                Log.setText(Log.getText() + "\nOponentul a castigat cu : " + oponent.puncte + " | Ati avut: " + jucator.puncte);
+                arataCarti();
+                redaSunet("infrangere");
+                oponent.adaugaCredit(Double.parseDouble(pot.getText()));
+                creditOponent.setText("Credit Oponent: " + oponent.credit);
+                Alert alert = new Alert(Alert.AlertType.NONE, "\nOponentul a castigat cu : " + oponent.puncte + " Ati avut: " + jucator.puncte, ButtonType.OK);
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    reset();
+                }
+            }else {
+                Log.setText(Log.getText() + "\nAmbii jucatori au fost eliminati ! Ati avut " + jucator.puncte + " puncte! Oponentul dvs a avut: " + oponent.puncte);
+                arataCarti();
+                redaSunet("egalitate");
+                jucator.adaugaCredit(Double.parseDouble(pot.getText()) / 2);
+                credit.setText("Creditul Dumneavoastra: " + jucator.credit);
+                oponent.adaugaCredit(Double.parseDouble(pot.getText()) / 2);
+                creditOponent.setText("Credit Oponent: " + oponent.credit);
+                Alert alert = new Alert(Alert.AlertType.NONE, "Ambii jucatori au fost eliminati ! Ati avut " + jucator.puncte + " puncte! Oponentul dvs a avut: " + oponent.puncte, ButtonType.OK);
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    reset();
+                }
+            }
+
         }
     }
 

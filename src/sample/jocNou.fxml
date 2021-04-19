@@ -4,8 +4,8 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="1104.0" stylesheets="@styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerJocNou">
-   <right>
-      <VBox prefHeight="202.0" prefWidth="165.0" spacing="30" BorderPane.alignment="CENTER">
+    <right>
+        <VBox prefHeight="202.0" prefWidth="165.0" spacing="30" BorderPane.alignment="CENTER">
             <Button fx:id="hit"  disable="true" maxHeight="30.0" prefWidth="150.0" text="Hit" onMouseClicked="#rundaNoua" />
             <Button fx:id="pass" disable="true" maxHeight="30.0" prefWidth="150.0" text="Pass" onMouseClicked="#pass"/>
             <Button fx:id="pariaza" maxHeight="30.0" prefWidth="150" text="Pariaza" onMouseClicked="#pariaza" />
@@ -13,10 +13,10 @@
             <Slider fx:id="sliderPariu" showTickMarks="true" visible="false" min="1" max="30" maxWidth="150" onMouseDragged="#actualizeazaPariu" onMouseClicked="#actualizeazaPariu"/>
             <Button fx:id="colecteazaPariu" visible="false" maxHeight="30.0" prefWidth="150" text="Confirm" onMouseClicked="#colecteazaPariu"/>
             <Button fx:id="inapoi" alignment="CENTER" onMouseClicked="#inapoi" maxHeight="30.0" prefWidth="150" text="Inapoi" />
-      </VBox>
-   </right>
-   <bottom>
-      <HBox prefHeight="150.0" prefWidth="200" spacing="20">
+        </VBox>
+    </right>
+    <bottom>
+        <HBox prefHeight="150.0" prefWidth="200" spacing="20">
             <TextArea fx:id="Log" editable="false" prefHeight="150.0" prefWidth="429.0" />
             <ImageView fx:id="cartea1" />
             <ImageView fx:id="cartea2" />
@@ -24,25 +24,25 @@
             <ImageView fx:id="cartea4" />
             <ImageView fx:id="cartea5" />
             <ImageView fx:id="cartea6" />
-      </HBox>
-   </bottom>
-   <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="50" BorderPane.alignment="CENTER">
-          <VBox>
-          <Label fx:id="credit" alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Creditul Dumneavoastra: 100.00" textFill="#ee0000"/>
-          <Label fx:id="creditOponent" alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Credit Oponent: 100.00" textFill="#ee0000"/>
-          </VBox>
-          <ImageView fx:id="carteDealer1" />
-          <ImageView fx:id="carteDealer2" />
-          <ImageView fx:id="carteDealer3" />
-          <ImageView fx:id="carteDealer4" />
-          <ImageView fx:id="carteDealer5" />
-          <ImageView fx:id="carteDealer6" />
-      </HBox>
-   </top>
-   <left>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-   </left>
+        </HBox>
+    </bottom>
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="50" BorderPane.alignment="CENTER">
+            <VBox>
+                <Label fx:id="credit" alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Creditul Dumneavoastra: 100.00" textFill="#ee0000"/>
+                <Label fx:id="creditOponent" alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Credit Oponent: 100.00" textFill="#ee0000"/>
+            </VBox>
+            <ImageView fx:id="carteDealer1" />
+            <ImageView fx:id="carteDealer2" />
+            <ImageView fx:id="carteDealer3" />
+            <ImageView fx:id="carteDealer4" />
+            <ImageView fx:id="carteDealer5" />
+            <ImageView fx:id="carteDealer6" />
+        </HBox>
+    </top>
+    <left>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+    </left>
     <center>
         <Label fx:id="pot"  alignment="TOP_RIGHT" contentDisplay="RIGHT" visible="false" textFill="#ee0000">
         </Label>

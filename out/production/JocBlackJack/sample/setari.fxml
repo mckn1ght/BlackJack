@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.collections.*?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
-<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerSetari">
+<?import java.lang.*?>
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerSetari">
     <center>
         <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
             <columnConstraints>
@@ -43,7 +41,6 @@
             <Label fx:id="nivelVolum" prefHeight="17.0" maxWidth="250.0" text="Nivel Volum" GridPane.rowIndex="2" />
             <Slider fx:id="setareNivelVolum" prefHeight="100.0" maxWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2"
                     min="0" max="1" value="1" onMouseDragged="#seteazaNivelVolum" onMouseClicked="#seteazaNivelVolum" />
-
         </GridPane>
     </center>
     <bottom>
